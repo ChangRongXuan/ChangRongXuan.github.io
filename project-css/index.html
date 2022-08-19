@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+
+img{
+    width: 50px;
+    display: block;
+    margin: auto;
+    padding: 5px;
+}
+
+h4{
+    text-align: center;
+}
+
+p{    
+    text-align: center;
+    padding: 0 0 20px 20px;
+}
+
+#icon{
+    width: 1100px;
+    margin: auto;
+}
+
+.icon1{
+width: 33%;
+height: 212px;
+float:left
+}
+
+.icon2{
+width: 33%;
+height: 212px;
+float:left
+}
+
+.icon3{
+width: 33%;
+height: 212px;
+float:left
+}
+
+.icon4{
+width: 33%;
+height: 212px;
+float:left
+}
+
+.icon5{
+width: 33%;
+height: 212px;
+float:left
+}
+
+.icon6{
+width: 33%;
+height: 212px;
+float:left
+}
+
+.foreword{
+    font-size: 20px;
+    text-align: center;
+    width: 900px;
+    margin: auto;
+    padding: 30px;
+}
+
+hr{
+    /* position: absolute; */
+}
+
+.a{
+    width: 165px;
+    height: 50px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(255, 97, 24);
+    border: none;
+    font-size: 18px;
+    letter-spacing: 2px;
+    border-radius: 10px;
+}
+
+.a:hover{
+    width: 165px;
+    height: 50px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(226, 75, 6);
+    border: none;
+    font-size: 18px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    /* cursor: 滑鼠鼠標 */
+}
+
+.b{    
+    width: 80px;
+    height: 30px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(255, 202, 55);
+    border: none;
+    font-size: 12px;
+    letter-spacing: 1px;
+    border-radius: 20px;
+}
+
+
+.b:hover{
+    color: rgb(255, 255, 255);
+    background-color: rgb(255, 143, 92);
+    border: none;
+    font-size: 12px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    /* cursor: 滑鼠鼠標 */
+}
+
+.top{
+    width: 100%;
+    height: 100px;
+    background-color: #0084d193;
+    /* display: flex; */
+    /* flex-direction: row-reverse */
+    position: relative;
+}
+
+
+
+nav>ul{
+    list-style: none;
+    color: aliceblue;
+    font-size: 18px;
+    letter-spacing: 3px;    
+    margin-top: 0px;
+    text-align: right;
+    position: absolute;
+    bottom: 0%;
+    right: 10px;
+    /* position: absolute; */
+    /* bottom: 20px; */
+    /* display: flex; */
+    /* justify-content:flex-end; */
+}
+/* 什麼時候要用 > 的符號?  */
+
+nav a{
+    color: inherit; 
+    /* 移除超連結顏色 */
+    text-decoration: none;
+    /* 移除底線 */
+}
+
+nav a:hover{
+    cursor: pointer;
+    background-color: #3db8ff;
+}
+
+
+li{
+    margin:  0 0 5px 5px;
+    padding: 10px;
+    display: inline-block;
+    /*讓li跟li之間的左右間隔加大*/
+}
+
+.homepage{
+    width: auto;
+    height:800px;
+    /* 在div裡面塞backgroud color 一定要給高度! */
+    background-image: url(images/banner1200X630_臉書.jpeg);
+    background-repeat:no-repeat ;
+    background-size: cover;
+    margin-bottom: 20px; ;
+}
+
+
+.fixedtitle{
+width: 500px;
+margin: auto;
+}
+
+.title_teacher{
+    clear: both;
+    text-align: center;
+
+}
+
+.teacher_photo{
+text-align: center;
+
+}
+.T1{
+    width: 260px;
+    height: 400px;
+    background-color: #0086D1;
+    display: inline-block;
+    margin: 20px;
+    position: relative;
+}
+
+.T2{
+    width: 260px;
+    height: 400px;
+    background-color: #0086D1;
+    display: inline-block;
+    margin: 20px;
+    position: relative;
+}
+
+.T3{
+    width: 260px;
+    height: 400px;
+    background-color: #0086D1;
+    display: inline-block;
+    margin: 20px;
+    position: relative;
+}
+
+h5{
+    display: inline-block; 
+    margin: 0%; 
+    padding: 0%; 
+    font-size: 18px; 
+    color: aliceblue; 
+    position: absolute; 
+    bottom: 100px; 
+    left: 20px;
+}
+
+.teacher_photo p{
+    font-size: 12px;
+    color: aliceblue;
+    padding: 18px;
+    text-align: justify;
+    line-height: 20px;
+}
+
+.textbox1{
+    width: 260px;
+    height: 260px;
+    background-color:#0084d100;
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    transition: .6s;
+}
+
+.textbox1 p{
+    padding-left: 20px ;
+    padding-top: 50px;
+    color: rgba(240, 248, 255, 0);}
+
+.T1:hover .textbox1{
+    background-color: #0084d186;
+    transform:translateY(-140px) ;
+}
+
+.T1:hover .textbox1 p{
+    color:aliceblue;
+}
+
+
+
+.textbox2{
+    width: 260px;
+    height: 260px;
+    background-color:#0084d100;
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    transition: .6s;
+}
+
+.textbox2 p{
+    padding-left: 20px ;
+    padding-top: 50px;
+    color: rgba(240, 248, 255, 0);}
+
+.T2:hover .textbox2{
+    background-color: #0084d186;
+    transform:translateY(-140px) ;
+}
+
+.T2:hover .textbox2 p{
+    color:aliceblue;
+}
+
+
+
+.textbox3{
+    width: 260px;
+    height: 260px;
+    background-color:#0084d100;
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    transition: .6s;
+}
+
+.textbox3 p{
+    padding-left: 20px ;
+    padding-top: 50px;
+    color: rgba(240, 248, 255, 0);}
+
+.T3:hover .textbox3{
+    background-color: #0084d186;
+    transform:translateY(-140px) ;
+}
+
+.T3:hover .textbox3 p{
+    color:aliceblue;
+}
+
+/* .addRedStar::before {
+        content: '*';
+        color: red;
+        font-size: 18px;
+        }
+
+.form input{
+       border: 0.5px color rgb(255, 18, 18); border-bottom-style: solid color rgb(255, 18, 18);border-top-style: none;border-left-style:none;border-right-style:none;
+        }
+        
+.form1{
+    width: 500px;
+    float: left;
+}
+
+.form2{
+    width: 500px;
+    float: left;
+}
+
+.form3{
+    width: 500px;
+    float: left;
+} */
+
+caption{
+    color: #ffffff;
+    font-size: 18px;
+    text-align: left;
+}
+
+table {
+        width: 400px;
+        border: 2px solid rgb(0, 110, 6);
+        height: 200px;
+        border-collapse: collapse;
+        font-size: 20px;
+        /* float: left; */
+        text-align: center;
+        margin: auto;
+}
+
+th, td{
+        /* text-align: center; */
+        line-height: 100px;
+        background-color: #ffffff;
+    
+    }
+
+tbody tr:nth-child(2n){
+            background-color: #8a8a8a;}
+tbody tr:nth-child(2n+1){
+            background-color: #ffffff );}
+
+
+.member_login{
+    background-color: #1b2d5b;
+}
+
+.timetable{
+    width: 100%;
+    height: 400px;
+    background-color: #1b2d5b;
+    text-align: center;
+    margin: auto;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="fixedtitle">
+
+<p style="font-size: 15px ; display: inline-block ;padding: 0; margin-left: 93px; ; " >
+    <!-- 這一段目前先用笨方法 直接算的  有比較好的方法可以置中?? -->
+第 11 期創業家現正招募中 4/1 - 4/30 </p> &nbsp;
+<input type="button" value="JOIN US!" class="b" style="display: inline-block; margin-bottom: 15px;" >  
+</div>
+
+    <nav class="top">
+        <ul>
+            <li><a href="#homepage">首頁</a></li>
+            <li>關於我們</li>
+            <li> <a href="#icon">課程介紹</a></li>
+            <li>講師陣容</li>
+            <li>會員登入</li>
+            <li>聯絡我們</li>
+        </ul>
+    </nav>
+
+<div class="homepage" id="homepage"></div>
+<!-- 要指定要跳到哪裡一定要用id命名辨識 -->
+
+<div class="foreword">
+
+    <h3 style="color: #0086D1;">
+        培育台灣新世代具指標性創業者<br>
+        AAMA 第 11 期招募中！
+    </h3>
+<input type="button" value="報名4/8說明會" onclick="location.href='https://www.accupass.com/event/2203180904346180008070'" class="a">
+<h4>AAMA 台北搖籃計畫是協助成長期創業者的公益學習平台<br>
+每年邀請成功企業家與高階經理人<br>
+以一對一方式輔導 25 位創辦人 / CEO<br>
+透過主題式課程、同儕學習及經驗分享等多元方式<br>
+協助創業者建立基本企業經營能力。</h4>
+</div>
+
+<section id="icon">
+
+<div class="icon1">
+<img src="images/handshake.png" alt="">    
+<h4>一對一導師指導</h4>
+<p>與創業導師一對一配對，透過導師分享視野、格局及企業經營智慧</p>
+<br>
+<hr size="1px" text-align="center" width="30px" margin-top
+:80px 0 0 0 >
+</div>
+
+<div class="icon2">
+    <img src="images/presentation.png" alt="">    
+    <h4>主題式課程</h4>
+    <p>針對新創企業成長共同關鍵議題舉辦主題式課程，主題含括商業模式創新、組織管理、品牌行銷、市場拓展、財務策略等</p>
+    <hr size="1px" text-align="center" width="30px" >
+</div>
+
+<div class="icon3">
+    <img src="images/group.png" alt="">    
+    <h4>導師多對一諮詢</h4>
+    <p>有效應用導師經驗，提供營運性建議</p>
+    <br>
+    <hr size="1px" text-align="center" width="30px" >
+</div>
+
+<div class="icon4">
+    <img src="images/camping-tent.png" alt="">    
+    <h4>共學營</h4>
+    <p>運用同儕專業與經驗，一起定義及解決問題</p>
+    <br>
+    <hr size="1px" text-align="center" width="30px" >
+</div>
+
+<div class="icon5">
+    <img src="images/heart.png" alt="">    
+    <h4>業務、資金、人才資源連結</h4>
+    <p>業務合作的連結 、投融資機會的引介與人才交流</p>
+    <br>
+    <hr size="1px" text-align="center" width="30px" >
+</div>
+
+<div class="icon6">
+    <img src="images/home.png" alt="">    
+    <h4>AAMA家族交流聚會</h4>
+    <p>不定期舉行平台上交流聚會凝聚AAMA導師、創業者及合作夥伴。</p>
+    <br>
+    <hr size="1px" text-align="center" width="30px" >
+</div>
+
+</section>
+
+<div class="title_teacher">
+    <hr style="display: inline-block;width: 20px; height: 1px; background-color: #0086D1;">
+    <h3 style="color: #0086D1; font-size: 24px; text-align: center;display: inline-block;padding: 20px;" >講師陣容</h3>
+    <hr style="display: inline-block;width: 20px;height: 1px; background-color: #0086D1;">
+</div>
+
+<div class="teacher_photo" style="margin-bottom: 50px;">
+
+    <div class="T1" style="position: relative;"> 
+        <img src="images/ozi.jpg" alt="" style="width: 260px; margin: 0%;padding: 0%;"> 
+        <h5> ØZI </h5>
+        <div class="textbox1">
+            <p>OZI在2018年發行首張個人專輯《OZI: The Album》，並以此張專輯入圍第30屆金曲獎最佳新人獎、最佳國語男歌手獎、最佳單曲製作人獎、最佳編曲人獎、最佳國語專輯獎、年度專輯獎等六項獎項。</p>  </div>
+    
+    </div>
+    <div class="T2">  
+        <img src="images/enno.jpg" alt="" style="width: 260px; margin: 0%;padding: 0%;">
+        <h5>鄭宜農 &nbsp Enno Cheng</h5>
+        <div class="textbox2">
+            <p>台灣獨立創作女歌手、演員、劇作家。 不斷變化的美麗星球──最值得期待的新世代女性唱作人。 2007年以電影《夏天的尾巴》出道，並榮獲第44屆金馬獎最佳新進演員提名。</p> 
+        </div>  
+
+    </div>
+
+    <div class="T3"> 
+        <img src="images/wei.jpg" alt="" style="width: 260px;margin: 0%;padding: 0%;">
+        <h5>韋禮安  &nbsp  WeiBird</h5>
+        <div class="textbox3">
+            <p>從網路創作平台Streetvoice發跡，2010年發表個人首張創作專輯《韋禮安》，曾獲第22屆金曲獎最佳新人獎，第26屆金曲獎最佳作曲人獎，2020年推出第五張創作專輯《Sounds of My Life》。</p> 
+        </div>  
+    </div>
+
+</div>
+
+        
+    <div class="member_login">
+        <hr style="display: inline-block;width: 20px; height: 1px; background-color: #ffffff;">
+        <h3 style="color: #ffffff; font-size: 24px; text-align: center;display: inline-block;padding: 20px;" >講座資訊</h3>
+        <hr style="display: inline-block;width: 20px;height: 1px; background-color: #ffffff;">
+    </div>
+
+    <div class="timetable">
+        <table style="width: 800px; margin: 0;">
+            <caption>
+                <h4>活動地點：張榮發國際會議中心（台北市中正區中山南路11號）</h4>
+            </caption>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>單日一般</th>
+                    <th>單日早鳥</th>
+                    <th>單日三人團報</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>費用</td>
+                    <td>每人4,500</td>
+                    <td>每人4,400</td>
+                    <td>每人3,700</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>8</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.462420715607!2d121.59642761524722!3d25.052311443710565!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442ab6570a43f1b%3A0x7df0dd098383b7f0!2z6Ie65YyX5rWB6KGM6Z-z5qiC5Lit5b-D!5e0!3m2!1szh-TW!2stw!4v1649214955962!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="float:right;"  ></iframe>
+
+    </div>
+
+    <!-- <div class="member_login">
+        <hr style="display: inline-block;width: 20px; height: 1px; background-color: #0086D1;">
+        <h3 style="color: #0086D1; font-size: 24px; text-align: center;display: inline-block;padding: 20px;" >會員登入</h3>
+        <hr style="display: inline-block;width: 20px;height: 1px; background-color: #0086D1;">
+    </div>
+
+    <div class="form">
+
+    <div class="form1" style="line-height:50px;">
+        <h2>登入</h2>
+        <div class="form1 addRedStar">
+            <label for="class" > 帳號 </label> &nbsp
+            <input type="text" name="name" id="name" size="20" maxlength="20" >
+         </div>
+
+         <div class="form1 addRedStar">
+            <label for="class">密碼</label> &nbsp
+            <input type="text" name="name" id="name" size="20" maxlength="20" placeholder="最多不超過12碼">
+         </div>
+
+         <br>
+
+         <a href="" style="background-color: #ff6118; padding: 7px; border-radius: 10px;text-decoration:none; color: rgb(255, 255, 255);font-size: 15px;"> 登入並修改線上報名表</a>
+    </div>
+
+    <div class="form2" style="line-height:50px">
+        <h2>忘記密碼</h2>
+        <div class="form2 addRedStar">
+            <label for="class">信箱</label>
+            <input type="text" name="name" id="name" size="10" maxlength="10">
+         </div>
+
+         <div class="form2 addRedStar">
+            <label for="class">生日</label>
+            <input type="text" name="name" id="name" size="10" maxlength="10">
+         </div>
+
+         <a href="" style="background-color: #ff6118; padding: 7px; border-radius: 10px;text-decoration:none; color: rgb(255, 255, 255);font-size: 15px;"> 送出密碼至信箱</a>
+    </div>
+
+    <div class="form3"style="line-height:50px" >
+        <h2>註冊</h2>
+        <div class="form3 addRedStar">
+            <label for="class">姓名</label>
+            <input type="text" name="name" id="name" size="10" maxlength="10">
+         </div> 
+         <div class="form3 addRedStar">
+            <label for="class">手機</label>
+            <input type="text" name="name" id="name" size="10" maxlength="10">
+         </div> 
+         <div class="form3 addRedStar">
+            <label for="class">年齡</label>
+            <input type="text" name="name" id="name" size="10" maxlength="10">
+         </div> 
+         <div class="form3 addRedStar">
+            <label for="class">最高學歷</label>
+            <input type="text" name="name" id="name" size="10" maxlength="10">
+         </div> 
+
+    </div>    
+
+    </div> -->
+
+
+
+
+
+</body>
+
+</html>
+
