@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll</title>
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <!-- font awesome -->
+    <link href="./fontawesome-(free-6.1.1-web)/css/all.css" rel="stylesheet">
+
+
+    <!-- google font connect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300;400;500;600;700;900&display=swap" rel="stylesheet">
+
+
+    <style>
+
+
+        body{
+            font-family: "Yu Mincho", "YuMincho", "游明朝", "游明朝体", "Noto Serif JP", "Roboto Slab", Garamond, "Times New Roman", "Hiragino Mincho Pro", "HGS明朝E", serif;
+        }
+
+        /* navbar */
+        .navbar-transparent{
+            height: 90px;
+            width: 100%;
+            padding: 50px 80px;
+        }
+
+
+        .navbar-transparent li, .navbar-white li{
+            list-style: none;
+            font-size: 14px;
+            letter-spacing: 0.15rem;
+            font-weight: 500;
+            height: 28px;
+            margin: auto 10px;
+            position: relative;
+        }
+
+        /* 這邊 hover after 用不出來QQ why??  */
+        /* 下面這邊內容是 參考網站的Q__Q */
+        .navbar-transparent li:after{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #fff;
+            content: "";
+            opacity: 0;
+            /* transform-origin: bottom right;
+            transition: .25s ease-out;
+            transform: scaleX(0); */
+        }
+
+        .navbar-transparent li:hover::after{
+            opacity: 1;
+        }
+
+
+        .navbar-white li:hover{
+            cursor: pointer;
+            color: gray;
+        }
+
+        .navbar-white{
+            height: 90px;
+            width: 100%;
+            padding: 50px 80px;
+            position: fixed;
+            top: 0px ;
+            left: 0px;
+            transition: .3s ease-in;
+            opacity: 0;
+            z-index: 10;
+        }
+
+        /* 首頁封面 */
+        .index{
+            width: 100%;
+            height: 100vh;
+            background: url(./scroll-img/4.jpg) no-repeat center;
+        }
+
+        .index_title{
+            padding: 50px 80px;
+        }
+
+        .copyright{
+            position: relative;
+        }
+        .copyright p{
+            transform:rotate(90deg);
+            transform-origin: top left;
+            position: absolute;
+            left:20px;
+            width: 500px;
+            letter-spacing: 0.15rem;
+        }
+
+        .text-white img{
+            width: 450px;
+            animation-name:fadein;
+            animation-duration: 2.5s;
+            animation-delay: .2s;
+        }
+
+        .text-white p:nth-child(2){
+            animation-name:fadein;
+            animation-duration: 2.5s;
+            animation-delay: .5s;
+        }
+
+        .text-white span{
+            animation-name:fadein;
+            animation-duration: 2.5s;
+            animation-delay: .8s;
+        }
+
+
+        /* 處理封面文字淡入動畫 */
+        @keyframes fadein { 
+            from {
+                opacity: 0;
+            } 
+            to {
+                opacity: 1;
+            } 
+        }  
+
+
+
+        /* 前言 */
+        .forehead{
+            width: 100%;
+            height: 100vh;
+        }
+
+        .forehead p{
+            word-break: keep-all;
+            line-height: 3.4rem ;
+            font-size: 16px;
+            letter-spacing: 3.6px;
+            transition: 1s ease;
+            opacity: 0;
+            margin-top: 65px;
+        }
+
+        .forehead h2{
+            word-break: keep-all;
+            line-height: 4.5rem ;
+            letter-spacing: 3.6px;
+            margin-top: 200px;
+            transition: .8s ease;
+            opacity: 0;
+        }
+
+
+        /* 這邊是滿版輪播牆CSS */
+        .slider-dots>li{
+        width: 28px;
+        height: 3px;
+        background: rgb(209, 209, 209);
+        margin: auto 15px;
+        }
+
+        .slider-dots>li:hover{
+            cursor: pointer;
+        }
+
+        .clothimg{
+            height: 100%;
+            padding: 0px;
+        }
+
+        .train li{
+            height: 100%;
+            /* width:1100px; */
+            /* padding: auto -10px; */
+            margin: auto 20px;
+            overflow: hidden;
+            
+        }
+
+        .train img{
+            object-fit: cover;
+            object-position: center;
+            width: 100%;
+        }
+
+        ul{
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .train{
+            transform: translateX(-1608px); 
+            /* // 每次移動-1152px  第一次位置是在-2104px */
+
+        }
+
+        
+        .carousel{
+            position: relative;
+        }
+        
+        .arrow-left{
+            width: 60px;
+            height: 100%;
+            /* background-color: rgb(230, 20, 20); */
+            /* outline: 1px solid gray; */
+            position: absolute;
+            top: 0px ;
+            left: 200px;
+            z-index: 5;
+            /* top:50% */
+        }
+        .arrow-right{
+            width: 60px;
+            height: 100%;
+            /* background-color: rgb(230, 20, 20); */
+            /* outline: 1px solid gray; */
+            position: absolute;
+            top: 0px ;
+            right: 175px;
+            z-index: 5;
+            /* top:50% */
+        }
+        
+        .arrow-left>span{
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255, 255, 255, 0.715);
+            outline: 1px solid gray;
+            font-size: 18px;
+            color:gray;
+        }
+        .arrow-right>span{
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255, 255, 255, 0.715);
+            outline: 1px solid gray;
+            font-size: 18px;
+            color:gray;
+        }
+
+        .arrow-left>span:hover, .arrow-right>span:hover {
+            cursor: pointer;
+        }
+
+        .picture{
+            width: 100%;
+            height: 85vh;
+            margin: 200px auto;
+            /* outline: 5px solid red; */
+        }
+
+        .col-6 img{
+            width: 100%;
+            object-fit: contain;
+            object-position: cover;
+        }
+
+
+        .picture-notion>img:nth-child(1){
+            opacity: 0;
+            transition: .8s ease;
+        }
+
+        .picture-notion>p:nth-child(2){
+            font-size: 22px;
+            margin: 50px auto;
+            line-height: 4rem;
+            opacity: 0;
+            transition: 1s ease;
+            transition-delay: 1s;
+        }
+
+        .picture-notion>p:nth-child(3){
+            font-size: 14px;
+            margin: 50px auto;
+            line-height: 2.5rem;
+            opacity: 0;
+            transition: 1s ease;
+            transition-delay: 1.2s;
+        }
+
+        /* .picture-notion a>img{ */
+        .picture-notion a>img{
+            width: 12%;
+            padding-bottom: 10px;
+            border-bottom:1px solid black;
+            opacity: 0;
+            transition: .6s ease;
+            transition-delay: 1.4s;
+        }
+
+        .guide_faq{
+            width: 85%;
+            height: 100vh;
+        }
+        .guide_faq .col{
+            /* overflow: hidden; */
+            padding: 20px auto;
+            height: 100%;
+            position: relative;
+        }
+
+        .guide_faq .col>img:nth-child(1){
+            width: 100%;
+            /* height: 100%; */
+            object-fit: cover;
+            object-position: center; 
+        }
+        .guide_faq .col>p{
+            position: absolute;
+            font-size: 20px;
+            color: white;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            letter-spacing: 0.8rem;
+            /* outline: 1px solid red; */
+            padding: 50px auto;
+        }
+
+        .guide_faq .col:hover  .guide_faq .col>p{
+            border-bottom: 1px solid white ;
+            transition: .5s ease;
+            cursor: pointer;
+        }
+
+        .guide_faq_title{
+            position: absolute;
+            left: 8%;
+            top: -5%;
+            z-index: 5;
+        }
+
+        .booknow{
+            background: url(./scroll-img/landscape.jpg) no-repeat center;
+            width: -100px;
+            height: 70vh;
+        }
+
+        .guide>img:nth-child(1):hover{
+            transform: scale(1.1);
+            transition: .4s ease;
+            cursor: pointer;
+        }
+
+        .faq>img:nth-child(1):hover{
+            transform: scale(1.1);
+            transition: .4s ease;
+            cursor: pointer;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- 這邊是封面 -->
+    <div class="index">
+
+        <!-- Navbar(白字版)-->
+        <div class="navbar-transparent mx-auto d-flex justify-content-between align-items-center" >
+                <div class="col-3 px-0">
+                    <img src="./scroll-img/logo-footer.svg" alt="">
+                </div>
+                <div class="col-4">
+                    <ul class="d-flex justify-content-between text-white">
+                        <li>CAMPERS</li>
+                        <li>CONCIERGE</li>
+                        <li>GUIDE</li>
+                        <li>Q&A</li>
+                    </ul>
+                </div>
+        </div>
+
+        <!-- Navbar(黑字版) -->
+        <div class=" navbar-white bg-white mx-auto d-flex justify-content-between align-items-center" style="outline:1px solid white">
+                <div class="col-3 px-0">
+                    <img src="./scroll-img/logo-footer.svg" alt="" style="filter: brightness(0)">
+                </div>
+                <div class="col-4">
+                    <ul class="d-flex justify-content-between text-black">
+                        <li>CAMPERS</li>
+                        <li>CONCIERGE</li>
+                        <li>GUIDE</li>
+                        <li>Q&A</li>
+                    </ul>
+                </div>
+        </div>
+    
+    <!-- 首頁其他資訊都放這邊 -->
+    <div class="index_title w-100 h-75 d-flex" >
+
+        <!-- CopyRight -->
+        <!-- 這邊排版還沒用好 -->
+        <div class="mt-5 col-1 text-white copyright" >
+            <p>© 2022 Copyright TOAL CAMPER SERVICE All Rights Reserved.</p>
+        </div>
+        <div class="mt-5 col-4 text-white h-100 d-flex align-items-center justify-content-center" >
+            <div >
+                <img src="./scroll-img/title-fv.svg" alt="" class="mt-5" >
+
+                <p style="font-size: 20px;line-height: 3.4rem; margin: 40px auto; letter-spacing: 0.5rem;">この世界は、我々の想像力を描くためのキャンパスにすぎない。</p>
+                <span style="font-size: 15px; ">&nbspヘンリー・デイヴィッド・ソロー</span>
+            </div>
+        </div>
+
+
+
+    </div>
+
+    </div>
+
+
+    <!-- 這邊是文字前言 -->
+    <div class="forehead text-center w-75 mx-auto ">
+        <h2 class=" md-5">かけがいのない <br>「Trip Of A Lifetime 一生に一度の旅」を。</h2>
+        <p>近年の目覚ましいテクノロジーの発展は、私たちの暮らしを便利で簡単なものに変えました。<br>
+            私たちはそこから多くのものを享受すると同時に多くのものを <br>
+            失っていると言えるのではないでしょうか。<br>
+            アメリカの作家 ヘンリー・デヴィッド・ソローは彼の代表作で <br>
+            自然文学の原点とも言われる「ウォールデン　森の生活」の中でこう言っています。</p>
+
+        <p>“This world is but a canvas to our imaginations” <br>
+            「この世界は我々の想像力を描くためのキャンバスに過ぎない」<br>
+            行き過ぎた資本主義経済による世界の分断や、<br>
+            止まることを知らない地球環境の悪化は私たちの想像力がキャンバスに描くべきものではないはずです。<br>
+            手付かずの自然が多く残る北海道の広野を旅することで得る「想像力」が <br>
+            皆さまの人生の旅をより良き方向へ導くことになる。<br>
+            そしてそれがかけがいのない「Trip Of A Lifetime 一生に一度の旅」を。<br>
+            そんな旅を私たちがサポートできたなら、こんなに嬉しいことはありません。</p>
+    </div>
+
+
+    <!-- 這邊是滿版輪播牆 -->
+    <div class=" mx-0 carousel mb-5" style="margin-top: 110px;">
+
+        <!-- arrow -->
+        <div class="arrow-left d-flex align-items-center">
+            <span class="d-flex justify-content-center align-items-center"><i class="fa-solid fa-chevron-left"></i></span>
+        </div>
+    
+        <!-- 圖文放這邊 -->
+    
+        <!-- wrap是要overflow hidden的人 -->
+        <div class="wrap w-100 " style="overflow: hidden;">
+    
+            <!-- train是要調位置的人 每加一張圖加75%-->
+            <ul class="train d-flex " style="height: 70vh; width:500%; ">
+    
+                <!-- 假圖: 3 -->
+                <div class="col  h-100 clothimg " >
+                    <li class="list-unstyled text-center " style="outline: 3px solid purple;" >
+                        <img src="./scroll-img/3.jpg" alt=""  >
+                    </li>
+                </div>
+    
+    
+                <!-- 假圖: 4 -->
+                <div class="col  h-100 clothimg" >
+                    <li class="list-unstyled text-center " >
+                        <img src="./scroll-img/4.jpg" alt="" >
+                    </li>
+                </div>
+    
+    
+                <div class="col  h-100 clothimg" >
+                    <li class="list-unstyled text-center " >
+                        <img src="./scroll-img/1.jpg" alt=""  >
+                    </li>
+                </div>
+                <div class="col  h-100 clothimg" >
+                    <li class="list-unstyled text-center " >
+                        <img src="./scroll-img/2.jpg" alt="" >
+                    </li>
+                </div>
+                <div class="col  h-100 clothimg">
+                    <li class="list-unstyled text-center " >
+                        <img src="./scroll-img/3.jpg" alt="" >
+                    </li>
+                </div>
+                <div class="col  h-100 clothimg" >
+                    <li class="list-unstyled text-center " >
+                        <img src="./scroll-img/4.jpg" alt="" >
+                    </li>
+                </div>
+    
+                <!-- 假圖: 1 -->
+                <div class="col  h-100 clothimg" >
+                    <li class="list-unstyled text-center " >
+                        <img src="./scroll-img/1.jpg" alt="" >
+                    </li>
+                </div>
+    
+                <!-- 假圖: 2 -->
+                <div class="col  h-100 clothimg" >
+                    <li class="list-unstyled text-center " >
+                        <img src="./scroll-img/2.jpg" alt="" >
+                    </li>
+                </div>
+    
+            </ul>
+    
+    
+            <!-- 滑動小點 -->
+            <ul class="slider-dots d-flex  justify-content-center align-items-center" style="margin-top: 60px;">
+                <li class="list-unstyled "></li>
+                <li class="list-unstyled"></li>
+                <li class="list-unstyled"></li>
+                <li class="list-unstyled"></li>
+            </ul>
+        </div>
+    
+        <div class="arrow-right d-flex align-items-center">
+            <span class="d-flex justify-content-center align-items-center"><i class="fa-solid fa-angle-right"></i></span>
+        </div>
+    
+    </div>
+
+
+<!-- 這邊是圖文交錯區 -->
+    <!-- 圖片一 -->
+    <div class="picture " >
+        <div class="row h-100">
+            
+            <!-- 文字放這邊 -->
+            <div class="col-6 h-100 d-flex justify-content-center align-items-center " style="outline: 1px solid red;">
+
+                <div class="picture-notion picture-nr w-50 h-50 mx-auto" >
+                    <img src="./scroll-img/campers-lg.svg" alt="" class="w-75 notion-tr" >
+                    <p>居心地のよさを追求した <br>
+                        シンプルなキャンパー</p>
+                    <p>乗り心地と圧倒的な走破性能を兼ね備えた、 <br>
+                        TOYOTAハイラックスをカスタムした <br>
+                        トラックキャンパーをラインナップしています。</p>
+                    <a href="#" style="outline: 1px solid red;" class="notion-more"><img src="./scroll-img/more.svg" alt=""  style="outline: 1px solid blue;"></a>
+                </div>
+
+            </div>
+
+            <!-- 照片放這邊 -->
+            <div class="col-6 h-100 notion_img_r"><img src="./scroll-img/1 (1).jpg" alt="" ></div>
+        </div>    
+    </div>
+
+    <!-- 圖片二 -->
+    <div class="picture " >
+        <div class="row h-100">
+            
+            <div class="col-6 h-100"><img src="./scroll-img/2 (1).jpg" alt="" ></div>
+
+            <div class="col-6 h-100 d-flex justify-content-center align-items-center">
+                <div class="picture-notion picture-nl w-50 h-50 mx-auto" >
+                    <img src="./scroll-img/concierge-lg.svg" alt="" class="w-75  notion-tl ">
+                    <p>パーソナライズされた旅のかたち。
+                    <p>北海道を知り尽くしたコンシェルジュが <br>
+                        旅のプランから道中の様々なご要望をお伺いします。</p>
+                    <a href="#" class="ml-auto"><img src="./scroll-img/more.svg" alt="" ></a>
+                </div>
+            </div>
+        </div>    
+    </div>
+
+
+<!-- GUIDE + FAQ -->
+    <div class="guide_faq mx-auto d-flex justify-content-between align-items-center">
+        <div class="col guide h-50" style="overflow:hidden; outline:1px solid red">
+            <img src="./scroll-img/284653613_151006984133234_986256917135657524_n.jpg" alt="">
+            <p>ご利用について</p>
+            <img src="./scroll-img/guide-black.svg" alt="" class="guide_faq_title" style="width:25%">
+        </div>
+        <div class="col faq h-50" style="overflow:hidden">
+            <img src="./scroll-img/287956854_779169666579939_7984179767766267473_n.jpg" alt="">
+            <p>よくある質問</p>
+            <img src="./scroll-img/faq-black.svg" alt="" class="guide_faq_title" style="width:15%">
+        </div>
+    </div>
+
+
+    <div class="w-100 booknow" >
+        <div class="col-6">
+            <p>下記フォームよりご予約をお願いいたします。 <br>
+                レンタルギアやおすすめプランなどもご選択いただけます。</p>
+            <p>お電話でのご予約は011-205-0767まで</p>
+            <p>お問い合わせください。</p>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+
+    <!-- 這邊是滿版輪播牆JQ -->
+    <script>
+
+    
+        let nowPage = 0 ; //預設什麼都沒按起始位置在[0]
+    
+        $('.slider-dots li').eq(0) //預設圓點[0]為深灰色
+            .css("background", "gray")
+            .siblings()
+            .css("background", "rgb(209, 209, 209)");
+    
+    
+        // 點按哪個方塊就移動照片 + 變色
+        $(".slider-dots li").click(function () {
+            console.log(nowPage);
+            nowPage = $(this).index() ;
+            trainmove();
+        });
+    
+        // 往後箭頭
+        $('.arrow-right').click(function(){
+            nowPage++;
+            console.log(nowPage);
+            trainmove();
+        })
+    
+        // 往前箭頭
+        $('.arrow-left').click(function(){
+            nowPage--;
+            trainmove();
+        })
+    
+    
+    
+        // 火車移動公式
+        function trainmove(){
+            // 每次移動1152  第一次位置是在952
+                const moveX = -1608 + (nowPage) * -950 + "px";
+                $("ul.train").css('transition','.5s ease').css("transform", `translateX(${moveX})`);
+                $('.slider-dots li')
+                    .eq(nowPage)
+                    .css("background", "gray")
+                    .siblings()
+                    .css("background", "rgb(209, 209, 209)");
+            }
+    
+    
+        function trainmoveWithout(){
+            const moveX = -1608 + (nowPage) * -950  + "px";
+            $("ul.train").css("transition", "none").css("transform", `translateX(${moveX})`);
+        
+            // nowPage = 0;
+            $('.slider-dots li')
+                .eq(nowPage)
+                .css("background", "gray")
+                .siblings()
+                .css("background", "rgb(209, 209, 209)");
+        }
+    
+        // 事件監聽器
+        $("ul.train").on("transitionend", function(){
+                console.log('transition end',nowPage);
+                if(nowPage>=4){
+                    nowPage = 0;
+                    trainmoveWithout();
+                }
+    
+                if(nowPage<= -1){
+                    nowPage = 3;
+                    trainmoveWithout();
+                }
+            })
+        
+        
+
+        
+        // 這邊是偵測 scroll event
+
+        $(window).scroll( function(){
+
+            console.log($(window).scrollTop())
+            
+            if($(window).scrollTop()<350){
+                $('.navbar-white').css('opacity','0')
+                console.log(5);
+            }else{
+                $('.navbar-white').css('opacity','1')
+            };
+
+            if($(window).scrollTop()>400){
+            $('.forehead h2').css('transform','translateY(-40px)').css('opacity','1')
+            }
+
+            if($(window).scrollTop()>580){
+                $('.forehead p').eq(0).css('transform','translateY(-40px)').css('opacity','1')
+            }
+
+            if($(window).scrollTop()>780){
+                $('.forehead p').eq(1).css('transform','translateY(-40px)').css('opacity','1')
+            }
+
+
+            // 圖文浮出寫不出來啦
+            if($(window).scrollTop()>2200){
+
+                $('.notion-tr').css('transform','translateY(-40px)').css('opacity','1')
+                }
+                $('.picture-nr>p:nth-child(2)').css('transform','translateY(-45px)').css('opacity','1')
+                $('.picture-nr>p:nth-child(3)').css('transform','translateY(-45px)').css('opacity','1')
+
+                // $('notion-more img').css('transform','translateY(-45px)').css('opacity','1')
+
+                // 圖文交錯 圖片
+                // 希望做到的功能是 往下滑多少就往上移多少
+                $('.notion_img_r').css('transition','1.5s').css('transform','translateY(-40px)')
+                
+            });
+
+
+            if($(window).scrollTop()>2900){
+
+                $('.notion-tl').css('transform','translateY(-45px)').css('opacity','1')
+                $('.picture-nl>p:nth-child(2)').css('transform','translateY(-45px)').css('opacity','1')
+                $('.picture-nl>p:nth-child(3)').css('transform','translateY(-45px)').css('opacity','1')
+
+            };
+
+    
+    </script>
+
+</body>
+</html>
