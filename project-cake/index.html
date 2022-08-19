@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dessert</title>
+
+    <!-- 頁籤LOGO -->
+    <link rel="shortcut icon" href="https://maruhachifukure.com/wp/wp-content/themes/fukure/images/favicon.ico">
+
+    <!-- CSS reset -->
+    <link rel="stylesheet" href="./reset.css">
+    <!-- CSS style -->
+    <link rel="stylesheet" href="./dessert.css">
+
+    <!-- P文字google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=BIZ+UDGothic:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- h文字google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=BIZ+UDGothic:wght@400;700&family=Shippori+Mincho+B1:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- font-awesome -->
+    <link href="./fontawesome-(free-6.1.1-web)/css/all.css" rel="stylesheet">
+
+    <!-- JQuery -->
+    <script src="./jquery-3.6.0.min.js"></script>
+    <script src="./test.js"></script>
+    
+</head>
+
+<body>
+
+    <!-- 置頂區塊 -->
+    <div class="top_cake ">
+
+        <!-- top-logo -->
+        <div class="top_logo">
+            <img src="./dessert/logo.svg" alt="">
+        </div>
+    
+        <!-- top-波浪紋路 -->
+        <div class="top">
+            <img src="./dessert/bg_logo.png" alt="">
+        </div>
+    
+        <!-- 輪播照片 -->
+        <div class="carousel">
+        <img src="./dessert/kv01.jpg" alt="">
+        </div>
+
+        <div class="carousel">
+        <img src="./dessert/kv03_sp.jpg" alt="">
+        </div>
+
+        <div class="carousel">
+            <img src="./dessert/ph01.jpg" alt="">
+        </div>
+
+    </div>
+
+    <!-- NavBar -->
+    <div class="nav-cart">
+        <i class="fa-solid fa-cart-shopping"></i>
+    </div>
+    <div class="nav_list" onclick="fadeIn()">
+        <span></span>
+        <span></span>
+    </div> 
+
+
+    <!-- navbar - JS跳動光箱 -->
+    <div class="lightbox">
+
+        <div class="light_word">
+            <ul>
+                <li class="light_arrow light_ig">
+                    インスタグラム</li>
+                <li class="light_arrow">お知らせ</li>
+                <li class="light_arrow">ふくれ生活</li>
+                <li class="light_arrow">ご購入</li>
+                <li class="light_arrow">ふくれの種類</li>
+                <li class="light_arrow ">マルハチフクレ？</li>
+            </ul>
+
+        </div>
+
+
+
+
+    </div>
+
+
+
+
+    <!-- top-主標 -->
+    <div class="title">
+        <img src="./dessert/copy01_sp.png" alt="">
+    </div>
+
+    <!-- top-右下小圖 -->
+    <div class="bn"> </div>
+
+    <!-- top-左下直標 -->
+    <div class="top_subtitle">
+        <p>スクロール</p>
+    </div>
+
+
+<!-- ----------------------- -->
+
+    <!-- 半圓底圖 + 前導文字-->
+    <div class="oral "> 
+        <div class="forehead">
+
+            <div class="dot">
+            <img src="./dessert/copy01.png" alt="" >
+            </div>
+
+            <p class="forehead1">「ふくれ菓子」は、宮崎県都城で昔から家庭でつくられていた釜蒸し菓子です。
+                おなかふくらむ。かいわふくらむ。しあわせふくらむ。
+                かたちは三角、おいしさはまる。マルハチフクレは、ふくれ菓子の専門店です。</p>
+
+            <p class="forehead2">「ふくれ菓子」は、宮崎県都城で昔から家庭でつくられていた釜蒸し菓子です。<br>
+            おなかふくらむ。かいわふくらむ。しあわせふくらむ。<br>
+            かたちは三角、おいしさはまる。マルハチフクレは、ふくれ菓子の専門店です。</p>
+        </div>
+    </div>
+
+
+<!-- 蛋糕照片文字手機板 -->
+
+
+    <!-- 第一組 -->
+    <div class="container">
+        <div class="cake-wrap">
+        <img  class="cake-cake" src="./dessert/ph01.jpg" alt="">
+
+        <div class="cake_intro">
+            <img src="/dessert/copy02_01.png" alt="">
+            <img src="./dessert/copy02_02.png" alt="">
+            <p>百年ほど前から、九州の南さつま地方で作られてきた「ふくれ菓子」です。かつては家々で作られていて、都城の人たちにとっては、子どもの頃からいつもそばにあるおやつ。親しみを込めて「ふくれ」と呼んでいます。</p>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <!-- 第二組 -->
+    <div class="container ">
+        <div class="cake-wrap cake-wrap-2 cake-wrap-spe ">
+
+        <div class="cake-spe ">
+        <img  class="cake-cake cake_cake_2  " src="./dessert/ph03.jpg" alt=""> </div>  
+
+        <div class="cake_intro cake2">
+            <img src="/dessert/copy03_01.png" alt="">
+            <img src="./dessert/copy03_02.png" alt="">
+            <p>ふくれは、小麦粉と砂糖と酢と卵、天然重曹を加えて蒸しあげる素朴なお菓子。<br>
+            バターは使わず、昔ながらのシンプルな原料と製法にこだわって手づくりしています。それゆえに原料の配合や混ぜ込み作業がむずかしく、少しでもバランスが変わるとまったく違ったものになってしまうため、気が抜けません。防腐剤や着色料などは不使用。家族みんなで安心してお召し上がりいただけます。</p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- 第三組 -->
+    <div class="container mb">
+        <div class="cake-wrap">
+        <img  class="cake-cake" src="./dessert/ph05.jpg" alt="">
+
+        <div class="cake_intro cake-3">
+            <img src="/dessert/copy04_01.png" alt="">
+            <img src="./dessert/copy04_02.png" alt="">
+            <p>創業当時はプレーン1種類だけでしたが、現在は毎日蒸している4種類の定番ふくれに、季節ごとに変わる限定ふくれも登場。日々のおいしさ、季節のうれしさもふくらませます。
+
+                定番：プレーン・黒砂糖・抹茶・ココア
+                季節限定：きなこ・塩キャラメル・レモン・シナモン・らっかしょ（落花生）</p>
+            </div>
+        </div>
+    </div>
+
+
+<!-- 蛋糕介紹網頁版 -->
+
+    <!-- 第一組 -->
+    <div class="container-2 ">
+        <img  class="cake_cake_2" src="./dessert/ph01.jpg" alt="">
+
+        <div class="cake_intro-2 ">
+            <img src="/dessert/copy02.png" alt="">
+            <p>百年ほど前から、九州の南さつま地方で作られてきた「ふくれ菓子」です。かつては家々で作られていて、都城の人たちにとっては、子どもの頃からいつもそばにあるおやつ。親しみを込めて「ふくれ」と呼んでいます。</p>
+        </div>
+        <img class="cake-ps-2 "src="./dessert/ph02.jpg" alt="">
+    </div>
+
+            <!-- 背景LOGO -->
+            <div class=" logomark logo_dis">
+                <img src="./dessert/logo_mark.svg" alt="">
+                </div>
+
+
+    <!-- 第二組 -->
+    <div class="container-2">
+
+        <div class="cake_intro-2 cake_intro-2-left ">
+            <img src="/dessert/copy03.png" alt="">
+            <p>ふくれは、小麦粉と砂糖と酢と卵、天然重曹を加えて蒸しあげる素朴なお菓子。<br>
+                バターは使わず、昔ながらのシンプルな原料と製法にこだわって手づくりしています。それゆえに原料の配合や混ぜ込み作業がむずかしく、少しでもバランスが変わるとまったく違ったものになってしまうため、気が抜けません。防腐剤や着色料などは不使用。家族みんなで安心してお召し上がりいただけます。</p>
+        </div>
+
+        <img  class="cake_cake_2 cake_cake_2_left " src="./dessert/ph03.jpg" alt="">
+
+        <img class="cake-ps-2 cake-ps-2-left  "src="./dessert/ph04.jpg" alt="">
+
+        <!-- 背景LOGO -->
+        <img class="logomark_2 logo_dis" src="./dessert/logo_mark.svg" alt="">
+
+
+    </div>
+
+
+    <!-- 第三組 -->
+    <div class="container-2">
+        <img  class="cake_cake_2 " src="./dessert/ph05.jpg" alt="">
+
+
+        <div class="cake_intro-2  cake-spe">
+            <img src="/dessert/copy04.png" alt="">
+            <p>創業当時はプレーン1種類だけでしたが、現在は毎日蒸している4種類の定番ふくれに、季節ごとに変わる限定ふくれも登場。日々のおいしさ、季節のうれしさもふくらませます。</p> 
+            <p>定番：プレーン・黒砂糖・抹茶・ココア
+                季節限定：きなこ・塩キャラメル・レモン・シナモン・らっかしょ（落花生）</p>
+                            
+            <div class="cake-test">
+            <a>ふくれ生活一覧へ</a>
+            </div>
+        </div>
+    </div>
+
+        <!-- 背景LOGO -->
+        <div class=" logomark_3 logo_dis">
+            <img src="./dessert/logo_mark.svg" alt="">
+        </div>
+
+
+
+    <!-- 商品細項前導-->
+    <div class="oral white"> 
+        <div class="buy">
+            <img src="./dessert/buy.svg" alt="" class="dot">
+            <h2>できたての美味しさ <br>
+                そのまま冷凍でお届け </h2> 
+        
+            <p class="textalign">完全手作りのため数量限定にて販売しています。<br> ご希望の発送日の商品をお選びください。</p>
+
+            <p class="textalign-2">完全手作りのため数量限定にて販売しています。 ご希望の発送日の商品をお選びください。</p> 
+
+
+        </div>
+    </div>
+
+    
+    
+    <!-- 第二階段背景色 -->
+    <div class="bg_back">
+        
+
+    <!-- 注意事項(解凍方式) -->
+    <div class="notice-all">
+
+    <ul class="notice">
+        <li class="border-top">
+        <span>解凍方法</span>
+        <p>自然解凍：10分／レンジ：500Wで1分</p>
+        </li>
+        <li >
+        <span>解凍方法</span>
+        <p>製造日より30日（冷凍保存）／解凍後はその日のうちにお召し上がりください。</p>
+        </li>
+        <li >
+        <span>解凍方法</span>
+        <p>サイズはサンドイッチくらいの大きさです。（約12cm×10cm）</p>
+        </li>
+        <li >
+        <span>解凍方法</span>
+        <p>贈答用ののしを無料でおつけします。購入時、備考欄に「のし希望」と記載ください。</p>
+        </li>
+    </ul>
+
+    <div class="deliver">
+    <p>発送日が同じなら何個買っても</p>
+    <h3>800</h3> 
+    <p>沖縄・北海道・離島を除く</p>
+    </div>
+
+    <!-- 送貨標準 -->
+    <div class="deliver-2">
+        <p>発送日が同じなら<br>
+            何個買っても</p>
+        <div class="de-p">
+            <p>送料
+                
+                <span class="larger">800</span>
+                
+                円<br>
+            
+            沖縄・北海道・<br>
+            離島を除く</p>
+        </div>
+    </div>
+
+    </div>
+
+    <div class="warning">
+    <p>  &nbsp; 発送日の異なる商品は同時購入できません。お手数ですが、2回に分けてご購入をお願いします。</p>
+    
+
+    </div>
+
+<!-- --------種類介紹 --------------->
+
+<div class="sw-container">
+
+    <!-- 種類介紹1 -->    
+
+<div class="sw-row">
+    <div class="sw-column">
+    <div class="sandwich sandwich-1">  </div>
+
+    <div class="sandwich_intro">
+        <h3>プレーン・黒砂糖セット</h3>
+        <p>
+            マルハチ人気の2種を<br>
+            詰め合わせました。<br><br>
+            
+            プレーン、黒砂糖、各2個（計4個） <br><br>
+        </p>    
+        <section>1,850</section>  
+    </div>
+
+    <div class="sw">
+    <ul class="sandwich_time">
+        <li class="border-top">
+            <p>2月21日週の発送</p>
+            <div class="sandwich-btn "><span >コンビニ</span></div>
+        </li>
+        <li>
+            <p>3月1日週の発送</p>
+            <div class="sandwich-btn"><span >コンビニ</span></div>
+        </li>
+        <li>
+            <p>3月7日週の発送</p>
+            <div class="sandwich-btn"><span >コンビニ</span></div>
+        </li>
+        <li>
+            <p>3月14日週の発送</p>
+            <div class="sandwich-btn"><span >コンビニ</span></div>
+        </li>
+    </ul>
+    </div>
+
+    </div>
+
+
+    <!-- 種類介紹2 -->
+    <div class="sw-column">
+
+    <div class="sandwich sandwich-2">  </div>
+    <div class="sandwich_intro">
+        <h3>定番4種セット</h3>
+        <p>
+            初めてふくれを買う方に。<br>
+            4種の味を楽しめます。<br><br>
+            
+            プレーン、黒砂糖、ココア、抹茶、各1個（計4個） <br><br>
+        </p>      
+        <section>1,950</section>
+    </div>
+
+    <div class="sw">
+    <ul class="sandwich_time">
+        <li class="border-top">
+            <p>2月21日週の発送</p>
+            <div class="sandwich-btn "><span >コンビニ</span></div>
+        </li>
+        <li>
+            <p>3月1日週の発送</p>
+            <div class="sandwich-btn"><span >コンビニ</span></div>
+        </li>
+        <li>
+            <p>3月7日週の発送</p>
+            <div class="sandwich-btn"><span >コンビニ</span></div>
+        </li>
+        <li>
+            <p>3月14日週の発送</p>
+            <div class="sandwich-btn"><span >コンビニ</span></div>
+        </li>
+    </ul>
+    </div>
+
+    </div>
+
+
+    <!-- 種類介紹3 -->
+    <div class="sw-column">
+    <div class="sandwich sandwich-3">  </div>
+
+    <div class="sandwich_intro">
+        <h3>季節のマルハチセット</h3>
+        <p>
+            定番4種に、季節限定ふくれを<br>
+            セットでお届けします。<br><br>
+            
+            プレーン2個、黒砂糖2個、ココア1個、抹茶1個、季節限定ふくれ2個（計8個） <br><br>
+
+            今月の季節限定ふくれ
+            <span class="decorate dec-front">塩キャラメル</span>
+            <span class="decorate">レモン</span><br><br>
+
+            来月（4月4日週の発送〜）
+            <span class="decorate">シナモン</span>
+            <span class="decorate">らっかしょ</span><br><br>
+        </p>
+        <section>4,000</section>
+        
+    </div>
+
+    <div class="sw">
+    <ul class="sandwich_time">
+        <li class="border-top">
+            <p>2月21日週の発送</p>
+            <div class="sandwich-btn "><span >コンビニ</span></div>
+        </li>
+        <li>
+            <p>3月1日週の発送</p>
+            <div class="sandwich-btn"><span >コンビニ</span></div>
+        </li>
+        <li>
+            <p>3月7日週の発送</p>
+            <div class="sandwich-btn"><span >コンビニ</span></div>
+        </li>
+        <li>
+            <p>3月14日週の発送</p>
+            <div class="sandwich-btn"><span >コンビニ</span></div>
+        </li>
+    </ul>
+    </div>
+
+    <div class="note">
+    <section >コンビニ決済をご希望の方は、ご注文後、3日以内にご入金が確認できなかった場合は、キャンセルされたものと見なし、ご注文を取消させて頂きますのでご了承ください。</section> 
+    <br>
+    <section >
+    原材料　※【】内はアレルギー物質（27品目中）
+    <br>
+    ■ &nbsp プレーン・黒糖セット：小麦粉（米国）、乳飲料、黒砂糖、砂糖、卵、酢/重曹【小麦粉・卵・乳】<br>
+    ■ &nbsp 定番4種セット：小麦粉（米国）、乳飲料、黒砂糖、砂糖、卵、酢、ココア、ひなた抹茶 /重曹【小麦粉・卵・乳】<br>
+    ■ &nbsp 季節のマルハチセット：小麦粉（米国）、乳飲料、黒砂糖、砂糖、卵、酢、キャラメルパウダ ー、みやだいずきなこ、落花生、レモン、ココア、ひなた抹茶、シナモン、塩/重 曹【小麦粉・卵・乳・大豆・落花生】
+    </section> 
+    </div>
+
+
+    </div>
+
+</div>
+
+
+<div class="note-2"> 
+<section >コンビニ決済をご希望の方は、ご注文後、3日以内にご入金が確認できなかった場合は、キャンセルされたものと見なし、ご注文を取消させて頂きますのでご了承ください。</section> 
+<br>
+<section >
+原材料　※【】内はアレルギー物質（27品目中）
+<br>
+■ &nbsp プレーン・黒糖セット：小麦粉（米国）、乳飲料、黒砂糖、砂糖、卵、酢/重曹【小麦粉・卵・乳】<br>
+■ &nbsp 定番4種セット：小麦粉（米国）、乳飲料、黒砂糖、砂糖、卵、酢、ココア、ひなた抹茶 /重曹【小麦粉・卵・乳】<br>
+■ &nbsp 季節のマルハチセット：小麦粉（米国）、乳飲料、黒砂糖、砂糖、卵、酢、キャラメルパウダ ー、みやだいずきなこ、落花生、レモン、ココア、ひなた抹茶、シナモン、塩/重 曹【小麦粉・卵・乳・大豆・落花生】
+</section> 
+</div>
+
+</div>
+
+    </div>
+<!-- 4小格recipe菜單 -->
+<div class="recipe">
+    <img src="./dessert/logo_recipe_s.png" alt="">
+    <p>アイデアふくらむ！ ふくれのアレンジレシピ</p>
+</div>
+
+<div class=""> 
+<div class="cake">
+
+    <div class="row">
+        
+        <div class="col-3">
+            <div class="recipe-wrap">
+                <div class="recipe-img">
+                    <img src="./dessert/recipe_matcha-1-466x370.jpg" alt="">
+                </div>
+                <h3>抹茶ふくれのスイーツサンド</h3>
+                <span></span>
+            </div>
+        </div>
+
+        <div class="col-3">
+            <div class="recipe-wrap">
+                <div class="recipe-img">
+                    <img src="./dessert/recipe_plane-1-466x370.jpg" alt="">
+                </div>
+                <h3>きなこふくれとクリーム黒みつの和風パフェ</h3>
+            </div>
+        </div>
+
+        <div class="col-3">
+            <div class="recipe-wrap">
+                <div class="recipe-img">
+                    <img src="./dessert/recipe_peanut-1-466x370.jpg" alt="">
+                </div>
+                <h3>お好みの塩梅で。       岩塩とらっかしょふくれ</h3>
+            </div>
+        </div>
+
+        <div class="col-3">
+            <div class="recipe-wrap">
+                <div class="recipe-img">
+                    <img src="./dessert/recipe_caramel-1-466x370.jpg" alt="">
+                </div>
+                <h3>塩キャラメルふくれの
+                    フルーツパフェ</h3>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</div>
+
+
+
+<!-- 生活life背景圖 -->
+
+<div class="life">
+<img src="./dessert/bg_mocomoco (1).svg" alt="">
+
+
+<!-- 生活life標題 -->
+
+<div class="life-container">
+    
+    <div class="life-row ">
+        
+        <div class="life-title life-col">
+
+            <div>
+            <img  src="./dessert/copy012.png" alt="">
+            </div>
+
+            <h2>ふくれ生活</h2>
+            <p>日々の生活の中で「ふくれ」をご愛用されているリピーターの方々に、ふくれの楽しみ方・使い方をお聞きしました。</p>
+
+            <div class="test">
+            <a>ふくれ生活一覧へ</a>
+            </div>
+
+        </div>
+
+
+        <div class="life-col">
+            
+            <p class="hashtag">#02</p>
+            <div class="life-wrap">
+                
+
+                <div class="life-img life-img-1"></div>
+                <h3>育ちざかりのおなかふくれる</h3>
+                <p>櫻井彩衣子さん <br>
+                東京都国立市在住</p>
+                
+                <div class="life-a">
+                <p>記事を読む</p>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="life-col">
+            <p class="hashtag ">#03</p>
+            <div class="life-wrap ">
+
+                <div class="life-img life-img-2"></div>
+
+                <h3>ふくれと手土産と私</h3>
+                
+                <p>小泉広美さん  <br>
+                宮崎県都城市在住 </p>
+
+                <div class="life-a">
+                <p>記事を読む</p>
+                </div>  
+
+            </div>
+        </div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- 團隊成員介紹  -->
+
+<div class="team-row">
+
+    <div class="team-col team"></div>
+    
+    <div class="team-col teamintro ">
+        
+        <section class="introword">
+        <h2>宮崎県都城で <br>
+            毎日蒸してます</h2>
+        <p class="word-p">マルハチフクレ？</p>
+        </section>
+
+    </div>
+    
+</div>
+
+
+<!-- 創立歷史 -->
+<div class="history">
+    <h2>お知らせ</h2>
+    <p>2021年10月14日</p>
+    <a href="#" >まるはちウェブサイトオープンしました</a>
+    <a href="#" class="history-click">お知らせ一覧へ</a>
+</div>
+
+
+
+<!-- footer -->
+
+
+<div class="footer-down"></div>
+
+    <div class="footer">
+
+
+
+
+        <div class="footer-logo">
+        <img src="./dessert/logo_footer.svg" alt="">
+        </div>  
+
+        <div class="footer-bg">
+        <ul>
+            <li>マルハチフクレ？</li>
+            <li>ふくれの種類</li>
+            <li>ご購入</li>
+            <li>ふくれ生活</li>
+            <li>お知らせ</li>
+            <li>インスタグラム</li>
+        </ul>
+
+        <ul>
+            <li>お問い合わせ</li>
+            <li>プライバシーポリシー</li>
+            <li>特定商取引法に基づく表記</li>
+        </ul>
+
+        <img class="arrow" src="./dessert/arrow_bottom.svg" alt="">
+
+        <a class="tac back-to-top" href="#">ページの先頭へ</a>
+        <span class="tac">© まるはちふくれ菓子店</span>
+        </div>
+
+
+    </div>
+
+<!-- '中ゴシックBBB'  -->
+    <script type="text/javascript"src="//code.typesquare.com/static/ZDbTe4IzCko%253D/ts106f.js"charset="utf-8"></script>
+
+<!-- JS-link -->
+    <script src="./dessert.js"></script>
+
+</body>
+</html>
