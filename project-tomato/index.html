@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tomato Before</title>
+
+    <!-- font awesome -->
+    <link href="./fontawesome-free-6.1.1-web/css/all.css" rel="stylesheet">
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <style>
+
+        body{
+            margin: 0px;
+        }
+
+        .clock{
+            background-color: yellow;
+        }
+
+        .rect{
+            font-size: 70px;
+            font-weight: 700;
+        }
+
+        i:hover{
+            cursor: pointer;
+            color: rgb(86, 86, 86);
+        }
+
+        i{
+            font-size: 40px;
+            margin: auto 20px;
+        }
+
+        .pick-event{
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .todo-list>a{
+            color:rgb(175, 175, 175) ;
+        }
+
+        .todo-list:hover{
+            color: black;
+        }
+
+        .todo-list>a>i{
+            font-size: 16px;
+        }
+
+        .event{
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        /* 倒數時鐘放這邊 */
+        .tomato-clock{
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background-color: rgb(255, 255, 255);
+            /* border: 1px solid black; */
+            border-radius: 50%;
+        }
+
+        .hand{
+            position: absolute;
+            left: 100px;
+            top: 200px;
+        }
+
+        .hand-sec{
+            position: absolute;
+            width: 2px;
+            height: 100px;
+            left: -1px;
+            top: -200px;
+            background-color: rgb(45, 45, 45);
+        }
+
+
+    </style>
+
+</head>
+
+<body>
+
+<div class=" d-flex align-items-center justify-content-center" style="height: 100vh;">
+    
+
+    <!-- 倒數計時放這邊 -->
+    <div class="clock w-50 h-100 text-center p-5" >
+        <div class="rect w-50 mx-auto mt-5" ></div>
+        <div class="pick-event mt-5">收衣服</div>
+        <div class="time-icon mt-5">
+            <i class="fa-solid fa-play"></i>
+            <!-- <i class="fa-solid fa-pause"></i> -->
+            <i class="fa-solid fa-stop"></i>
+        </div>
+
+
+        <!-- 倒數「時鐘」放這邊 -->
+        <div class="tomato-clock mx-auto mt-5">
+
+            <!-- 25分鐘繞一圈 -->
+            <div class="hand">
+                <div class="hand-sec"></div>
+            </div>
+    
+        </div>
+
+        
+    </div>
+
+
+
+    
+
+    <!-- 代辦事項放這邊 -->
+    <div class="event w-50 h-100 text-center p-5"  >
+
+        <!-- Add-TODO -->
+        <div class="input-group mb-3 w-75 mx-auto mt-5" >
+            <input type="text" class="form-control" placeholder="Add new Todo" aria-label="Recipient's username" aria-describedby="button-addon2" name="new-todo" style="font-size: 18px;">
+            <button class="btn btn-outline-secondary" type="button" id="button-addon2">+</button>
+        </div>
+
+
+        <!-- TODO-LIST -->
+        <div class="todo-list list-group w-75 mx-auto mt-5 text-left">
+            <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between">
+                倒垃圾<i class="fa-solid fa-trash-can"></i>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between">
+                買東西<i class="fa-solid fa-trash-can"></i>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between">
+                整理房間<i class="fa-solid fa-trash-can"></i>
+            </a>
+
+        </div>
+    </div>
+
+
+</div> 
+
+
+<script src="./JS/jquery-3.6.0.min.js"></script>
+
+<script>
+
+    // 計算倒數25分鐘的公式
+    
+    const rect = document.querySelector('.rect');
+    rect.innerHTML = `<p> 25：00  </p>`;
+    let total =  1500000;
+
+    const tomato = () =>{
+        
+        const min = parseInt(total/1000/60); //計算出「分」
+        // let sec = 00;
+        sec = (total/1000) - parseInt(total/1000/60)*60; //計算出「秒」
+
+        if(sec==0){
+            sec = '00';
+        }
+
+        rect.innerHTML = `<p> ${min}：${sec}  </p>`;
+
+        total -= 1000 ;
+        setTimeout(tomato,1000); //每秒重run一次tomato()
+    }
+
+    // tomato();
+
+    
+    $('.fa-play').click(function(){
+        
+        let start = false;
+        if(start){
+            // tomato()
+            $('.fa-pause').remove();
+            $('.time-icon').prepend(`<i class="fa-solid fa-play"></i>`);
+            console.log(start);
+            start = false;
+        }else{
+            console.log(5);
+            console.log(start);
+            tomato(); 
+            $('.fa-play').remove();
+            $('.time-icon').prepend(`<i class="fa-solid fa-pause"></i>`);
+            start = true;
+        }
+    
+    });
+
+    // 當按下代辦清單選項時，資料要加入時鐘下方
+    $('.todo-list a').click(function () {
+
+    })
+
+    // 倒數時鐘25分鐘繞一圈  每秒繞：1500000 / 360度 
+    const runClock = () => {
+        const hand = document.querySelector(".hand-sec");
+        hand.style.transform = `rotate( 10 deg)`;
+        setTimeout(runClock,30);
+    } 
+
+    runClock();
+
+
+</script>
+
+
+</body>
+</html>
