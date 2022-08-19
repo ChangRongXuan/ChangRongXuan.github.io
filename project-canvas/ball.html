@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ball</title>
+
+    <style>
+        html, body{
+            height: 100%;
+            margin:0;
+        }
+
+        #canvas{
+            width: 100%;
+        }
+
+    </style>
+
+<!-- 安裝dat gui工具 -->
+<script src="https://cdn.bootcdn.net/ajax/libs/dat-gui/0.7.7/dat.gui.min.js"></script>
+
+</head>
+
+<body>
+
+<canvas id="mycanvas"></canvas>   
+
+<script>
+
+    var canvas = document.querySelector('#mycanvas')
+    var ctx = canvas.getContext("2d")
+
+     //視窗內側的大小 + 紀錄
+    ww=canvas.width=window.innerWidth
+    wh=canvas.height=window.innerHeight 
+
+    // 這邊是定義球的類別
+    var Ball = function(){
+
+        // 初始化屬性，用p.v.a物件來裝，預設是從中間開始跑
+        this.p = {
+            x: ww/2,
+            y: wh/2
+        }
+        this.v = {
+            x: 5,
+            y: 5
+        }
+        this.a = {
+            x: 0,
+            y: 1
+        }
+        this.r = 50
+        this.dragging = false //預設是沒有在被拖曳中
+    }
+
+    // 這邊prototype為何要用還不太懂??? 
+    Ball.prototype.draw = function(){
+        ctx.beginPath()
+        ctx.save()
+            ctx.translate(this.p.x,this.p.y)
+            ctx.arc(0,0,this.r,0,Math.PI*2)
+            ctx.fillStyle=controls.color
+            ctx.fill()
+        ctx.restore()
+    }
+
+    // 新增ball update(=會動)的方法
+    Ball.prototype.update = function(){
+        this.p.x += this.v.x
+        this.p.y += this.v.y
+
+        // 這邊設定讓球有加速度
+        this.v.x += this.a.x
+        this.v.y += this.a.y
+
+        // 這邊設定摩擦力，讓球最終會停止
+        this.v.x*=controls.fade //分別讓速率乘上0.99
+        this.v.y*=controls.fade
+
+        // 到這邊才真的是把調整數值(value)更動/更新在球上面
+        controls.vx = this.v.x 
+        controls.vy = this.v.y 
+        controls.ay = this.a.y 
+
+
+        this.checkBoundary() //這邊是選擇直接在執行update時就檢查邊界
+    }
+
+    // 定義一個函數還檢查球是否有超出邊界
+    Ball.prototype.checkBoundary = function(){
+        
+        // 這一組是檢查上下有邊界
+        if (this.p.x+this.r>ww){
+            this.v.x = -Math.abs(this.v.x)
+            // abs是絕對值，-Math的設定是一碰到邊界就反轉
+        }
+        if (this.p.y+this.r>wh){
+            this.v.y = -Math.abs(this.v.y)
+        }
+
+        // 這一組是檢查左右有邊界
+        if (this.p.x-this.r<0){
+            this.v.x = Math.abs(this.v.x)
+        }
+        if (this.p.y-this.r<0){
+            this.v.y = Math.abs(this.v.y)
+        }
+
+    }
+
+
+
+// --------------------以上都只是在定義Ball的類別
+
+
+
+// 先新增一個物件，讓dat.gui可以去控制它
+// 裡面的變數放: 想操控的屬性
+var controls = {
+    vx:0,
+    vy:0,
+    ay:0.6,
+    fade: 0.99, //調整球漸慢摩擦力
+    update: true, //要不要執行這次更新(預設是true)
+    color: '#fff',
+    step: function(){ //設一個按鈕，按了會update 
+        ball.update()
+    },
+    FPS: 30 //畫面更新率，預設是30
+
+}
+var gui = new dat.GUI()
+
+//把gui加到介面 這邊尚未跟球連動
+// .listen() => 讓介面跟console數值連動
+// .onChange(function(value() ) => 讓controls跟球的數值同步連動，但還沒有灌進去
+// 其中的value值是調整後的數值
+gui.add(controls,'vx',-50,50).listen().onChange(function(value){
+    ball.v.x = value
+})
+gui.add(controls,'vy',-50,50).listen().onChange(function(value){
+    ball.v.y = value
+})
+// .step() 是設定調整刻度單位
+gui.add(controls,'ay',-1,1).step(0.001).listen().onChange(function(value){
+    ball.a.y = value
+})
+
+gui.add(controls,'fade',-1,1).step(0.01).listen();
+gui.add(controls,'update')
+
+gui.addColor(controls,'color') //注意！color特別要改成addColor!! 
+gui.add(controls,'step')  //每按一次，update一個時間單位(一格)
+gui.add(controls,'FPS',1,120)  //希望自己決定更新的頻率(格數)
+
+
+
+// -------------------------- 以上是dat.gui控制項內容
+
+
+var ball; //這邊才開始將Ball實體化
+
+// 新增一個繪圖函數
+function init(){
+    ball = new Ball()
+}
+init() //定義後直接呼叫初始化
+
+function update(){
+    // 如果dat.gui上打勾，才會執行update更新
+    if (controls.update){
+        ball.update() //此步驟還未執行，只有呼叫
+    }
+
+}
+
+setInterval(update,1000/30) //在特定時間間隔內，呼叫update這個函數
+// 在這邊球才真的會動
+
+function draw(){ //在這裡填的內容會不斷被呼叫
+    ctx.fillStyle="rgba(0,0,0,0.5)"
+    ctx.fillRect(0,0,ww,wh)
+
+    ball.draw() //手動去呼叫在init()內的ball 
+    // init()設定腳色，這邊才設定是否上場
+
+    setTimeout(draw,1000/controls.FPS) //一秒(1000ms)要幾格的設定
+    // requestAnimationFrame(draw) 
+}
+draw()
+// requestAnimationFrame(draw) //最快更新速率，但不保證速率穩定
+
+
+// ---------------------下面這邊是寫拖曳功能
+
+
+</script>
+
+
+</body>
+
+
+
+</html>
