@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shop</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <!-- font awesome -->
+    <link href="./fontawesome-(free-6.1.1-web)/css/all.css" rel="stylesheet">
+
+    <style>
+
+    /* 如果用12等分法真的 */
+
+
+    .color{
+      outline: 1px solid red;
+    }  
+
+    /* 讓左側dropdowmn變hover */
+    .dropdown:hover .dropdown-menu {
+    display: block;
+    /* margin-top: 0;  */
+    /*  remove the gap so it doesn't close 但目前測起來沒有好像沒差??  */
+    }  
+
+    /* 讓btn的padding加多一點 */
+    .padding-top-bottom{
+      padding: 8px 5px;
+    }
+
+    .padding-top{
+      padding-top: 15px;
+    }
+
+    .padding-left{
+      padding-left: 8px;
+    }
+
+    .margin-top-bottom{
+      margin: 15px 0;
+    }
+
+    .btn-white{
+      background-color: #fff;
+    }
+
+    .btn-white:hover{
+      background-color: #e2e6ea;
+    }
+
+    .w-33{
+      width: 33.333%;
+    }
+
+    .ma{
+      margin: auto;
+    }
+
+    /* 灰底部分CSS */
+    .bg-gray{
+      background-color: rgba(224, 224, 224, 0.5);
+      width: 100%;
+      padding: 15px auto;
+      /* margin: 0; */
+    }
+
+    .box{
+      border-radius: 15px;
+      overflow: hidden;
+      /* margin: 20px auto; */
+    }
+
+    .pickup{
+      background-color:  #f8f7f6;
+      /* height: 300px; */
+      text-align: center;
+      padding: 50px;
+    }
+
+    .pickup>.row>.col>p{
+      text-align: left;
+      margin: 3px 0 0 0 ;
+    }
+    .pickup>.row>.col>img{
+      width: 100%;
+      margin:0 0 10px 0 ;
+    }
+    
+    .logo1{
+      background: url(./shop-img2/3coins_logo.png) no-repeat center;
+    }
+    .logo2{
+      background: url(./shop-img2/birthdaybar_logo.png) no-repeat center;
+    }
+    .logo3{
+      background: url(./shop-img2/salut_logo.png) no-repeat center;
+    }
+    .logo{
+      height: 45px;
+      border-top: 1px solid rgb(217, 217, 217) ;
+      background-size: 70%;
+    }
+
+    .type-bar>.row>.col{
+      color: #fff;
+      text-align: center;
+      padding: 15px auto;
+      
+    }
+
+    a{
+      text-decoration: none;
+      color: #fff;
+      font-size: 16px;
+    }
+
+    .type-bar{
+      height: 50px;
+    }
+
+    .bread{
+      background-color: #f8f7f6;
+      height: 50px;
+    }
+
+    .cloth-carousel{
+            position: relative;
+        }
+
+        .arrow-left{
+            position: absolute;
+            left: -20px;
+            z-index: 5;
+            width: 50px;
+            height: 100%;
+            font-size: 16px;
+        }
+        .arrow-right{
+            position: absolute;
+            right: -40px;
+            top: 0px;
+            z-index: 5;
+            width: 50px;
+            height: 100%;
+            font-size: 16px;
+        }
+
+        .arrow-left>span, .arrow-right>span{
+            width: 30px;
+            height: 30px;
+            background-color: #fff;
+            outline: 1px solid gray;
+        }
+
+        .arrow:hover{
+            cursor: pointer;
+        }
+
+        .train{
+            /* transform: translateX(-990px); */
+            /* 每次移動545 */
+            /* 最後一個移動-920 */
+            transition: .5s ease;
+        }
+
+        .card:hover{
+          cursor: pointer;
+          opacity: .6;
+        }
+
+        .carousel-title span:hover{
+          cursor: pointer;
+          opacity: .8;
+        }
+
+
+      /* 首頁大輪播牆 CSS */
+      
+      .slider-dots-index>li{
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: rgb(209, 209, 209);
+        margin: auto 10px;
+        }
+
+        .slider-dots-index>li:hover{
+            cursor: pointer;
+        }
+
+        .clothimg{
+            height: 100%;
+            padding: 0px;
+            /* outline: 5px solid green; */
+        }
+
+        .train-index li{
+            height: 100%;
+            /* width:1100px; */
+            padding: auto 10px;
+            
+        }
+
+        .train-index img{
+            object-fit: contain;
+            height: 100%;
+        }
+
+        ul{
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .train-index{
+            /* transform: translateX(200px); */
+            /* transform: translateX(-952px);  */
+            transform: translateX(-2082px); 
+            /* // 每次移動-1152px  第一次位置是在-2082px */
+
+        }
+
+        
+        .carousel{
+            position: relative;
+        }
+        
+        .arrow-left-index{
+            width: 60px;
+            height: 100%;
+            /* background-color: rgb(230, 20, 20); */
+            /* outline: 1px solid gray; */
+            position: absolute;
+            top: 0px ;
+            left: 200px;
+            z-index: 5;
+            /* top:50% */
+        }
+
+
+        .arrow-right-index{
+            width: 60px;
+            height: 100%;
+            /* background-color: rgb(230, 20, 20); */
+            /* outline: 1px solid gray; */
+            position: absolute;
+            top: 0px ;
+            right: 175px;
+            z-index: 5;
+            /* top:50% */
+        }
+        
+        
+        .arrow-left-index>span{
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255, 255, 255, 0.715);
+            outline: 1px solid gray;
+            font-size: 18px;
+            color:gray;
+        }
+        .arrow-right-index>span{
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255, 255, 255, 0.715);
+            outline: 1px solid gray;
+            font-size: 18px;
+            color:gray;
+        }
+
+        .arrow-left-index>span:hover, .arrow-right>span:hover {
+            cursor: pointer;
+        }
+        .arrow-left-index>span:hover, .arrow-right-2>span:hover {
+            cursor: pointer;
+        }
+
+        .train-index .col:hover{
+          cursor: pointer;
+          opacity: .7;
+        }
+
+        /* 前言灰底輪播牆 */
+        .wrap-forehead{
+            overflow: hidden; 
+        } 
+
+        /* 每次移動290px  */
+        .train-forehead{
+            transform: translateX(-580px);
+            transition: 0.5s ease;
+        }
+
+
+        .slider-dots-forehead>li{
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            /* outline: 1px solid #ff0000; */
+            background-color: rgb(209, 209, 209);
+            margin: auto 10px;
+            
+        }
+
+        .slider-dots-forehead>li:hover{
+            cursor: pointer;
+        }
+
+        
+        .arrow-forehead:hover{
+            cursor: pointer;
+            color: black;
+        }
+
+        .arrow-forehead{
+            color:rgb(194, 189, 189); 
+            font-size: 28px;
+        }
+
+        .forehead-vertical-TITLE{
+          width: 10%;
+          height: 500px;
+          /* background-color: red; */
+          /* outline: 1px solid purple; */
+          position: relative;
+        }
+
+        .forehead-vertical-TITLE h2{
+          font-size: 72px;
+          color: #fff;
+          /* font-family: 'Oswald', sans-serif; */
+          transform: rotate(90deg);
+          transform-origin: left top;
+          display: block;
+          position: absolute;
+          width: 800px;
+          top: 40px;
+          left: 110px;
+        }
+
+        .forehead{
+          background-color: #EFECE7;
+          padding: 50px;
+        }
+
+        .forehead-card-wrap{
+          width: 90%;
+        }
+
+        /* 首頁麵包屑 */
+        .index-bread:hover{
+          cursor: pointer;
+          color: gray;
+        }
+
+        /* 分類項目按鈕 */
+        .type-btn li:hover{
+          background-color: rgb(88, 88, 88);
+          cursor: pointer;
+        }
+
+        .type-btn li, .type-detail li{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .type-detail li:hover{
+          cursor: pointer;
+          font-weight: 570;
+        }
+
+        .navbar-nav:hover{
+          cursor: pointer;
+        }
+
+        .nav-item:hover i{
+          color: gray;
+        }
+
+        .pickup-img:hover{
+          cursor: pointer;
+          opacity: .7;
+        }
+
+
+  </style>
+
+
+</head>
+
+<body>
+
+  <!-- 首頁navbar -->
+  <nav class="navbar navbar-expand-lg bg-white text-dark w-75 mx-auto " style="height: 90px ">
+
+    <div class="container-fluid px-0" >
+
+      <a class="navbar-brand" href="#"><img src="./shop-img2/palcloset_logo.png" alt="" style="width: 30%;"></a>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+
+
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ml-auto" >
+
+          <li class="nav-item text-center mx-3" >
+            <i class="fa-solid fa-heart w-100" style="font-size: 25px"></i>
+            <a class="nav-link active text-dark" aria-current="page" href="#" style="font-size: 12px">favorite</a>
+          </li>
+
+          <li class="nav-item text-center mx-3">
+            <i class="fa-solid fa-clock" style="font-size: 25px"></i>
+            <a class="nav-link text-dark" href="#" style="font-size: 12px">Browsing </a>
+          </li>
+
+          <li class="nav-item text-center mx-3">
+            <i class="fa-solid fa-cart-shopping" style="font-size: 25px"></i>
+            <a class="nav-link text-dark" href="#"  style="font-size: 12px">cart</a>
+          </li>
+
+          <li class="nav-item text-center mx-3">
+            <i class="fa-solid fa-user" style="font-size: 25px"></i>
+            <a class="nav-link text-dark" href="#" style="font-size: 12px">login</a>
+          </li>
+
+
+        </ul>
+
+
+      </div>
+    </div>
+  </nav>
+
+
+
+  <!-- 搜尋欄位 -->
+  <nav class="navbar bg-gray " style="height: 60px;">
+    <div class="container-fluid w-75 d-flex align-items-center" >
+
+      <!-- 麵包屑 -->
+      <div class="index-bread" style="width: 30%;">
+        <ul class="d-flex">
+          <li class="list-unstyled mx-2 ">Top</li>
+          <li class="list-unstyled mx-2 ">/</li>
+          <li class="list-unstyled mx-2">Daily life room</li>
+        </ul>
+      </div>
+
+      <!-- search  這邊還缺放大鏡沒有放進去--> 
+      <form class="d-flex ml-auto " role="search" >
+        <input class="form-control me-3" type="search" placeholder="Search by keyword" aria-label="Search">
+      </form>
+    </div>
+  </nav>
+
+
+  <!-- 分類欄位 -->
+  <div class="bg-dark" style="height: 50px;">
+    <ul class="type-btn w-75 d-flex text-white h-100 mx-auto justify-content-between align-items-center text-center " style="font-size: 16px;">
+      <li class="list-unstyled w-100 h-100">all</li>
+      <li class="list-unstyled w-100 h-100">Young</li>
+      <li class="list-unstyled w-100 h-100">Adult</li>
+      <li class="list-unstyled w-100 h-100">Daily life</li>
+    </ul>
+  </div>
+
+    <!-- 細項欄位 -->
+    <div class="bg-white" style="height: 80px;">
+      <ul class="type-detail w-50 d-flex text-white h-100 mx-auto justify-content-between align-items-center text-dark " style="font-size: 16px;">
+        <li class="list-unstyled w-100 h-100">ALL</li>
+        <li class="list-unstyled w-100 h-100">WOMEN</li>
+        <li class="list-unstyled w-100 h-100">MEN</li>
+        <li class="list-unstyled w-100 h-100">KIDS</li>
+        <li class="list-unstyled w-100 h-100">LIFESTYLE</li>
+      </ul>
+    </div>
+
+
+  <!-- 首頁大輪播牆 -->
+  <div class=" mx-0 mt-2 carousel" >
+
+    <!-- arrow -->
+    <div class="arrow-left-index d-flex align-items-center">
+        <span class="d-flex justify-content-center align-items-center"><i class="fa-solid fa-chevron-left"></i></span>
+    </div>
+
+    <!-- 圖文放這邊 -->
+
+    <!-- wrap是要overflow hidden的人 -->
+    <div class="wrap w-100 " style="overflow: hidden;">
+
+        <!-- train是要調位置的人 每加一張圖加75%-->
+        <ul class="train-index d-flex " style="height: 70vh; width:600%;">
+
+            <!-- 假圖: 3 -->
+            <div class="col  h-100 clothimg">
+                <li class="list-unstyled text-center " >
+                    <img src="./shop-img2/goods_220609_01.jpg" alt="" >
+                </li>
+            </div>
+
+
+            <!-- 假圖: 4 -->
+            <div class="col  h-100 clothimg" >
+                <li class="list-unstyled text-center " >
+                    <img src="./shop-img2/goods_220526_01.jpg" alt="" >
+                </li>
+            </div>
+
+
+            <div class="col  h-100 clothimg">
+                <li class="list-unstyled text-center " >
+                    <img src="./shop-img2/goods_220603_01.jpg" alt="" >
+                </li>
+            </div>
+            <div class="col  h-100 clothimg" >
+                <li class="list-unstyled text-center " >
+                    <img src="./shop-img2/goods_220616_01.jpg" alt="" >
+                </li>
+            </div>
+            <div class="col  h-100 clothimg">
+                <li class="list-unstyled text-center " >
+                    <img src="./shop-img2/goods_220609_01.jpg" alt="" >
+                </li>
+            </div>
+            <div class="col  h-100 clothimg" >
+                <li class="list-unstyled text-center " >
+                    <img src="./shop-img2/goods_220526_01.jpg" alt="" >
+                </li>
+            </div>
+
+            <!-- 假圖: 1 -->
+            <div class="col  h-100 clothimg" >
+                <li class="list-unstyled text-center " >
+                    <img src="./shop-img2/goods_220603_01.jpg" alt="" >
+                </li>
+            </div>
+
+            <!-- 假圖: 2 -->
+            <div class="col  h-100 clothimg" >
+                <li class="list-unstyled text-center " >
+                    <img src="./shop-img2/goods_220616_01.jpg" alt="" >
+                </li>
+            </div>
+
+        </ul>
+
+
+        <!-- 滑動小點 -->
+        <ul class="slider-dots-index d-flex mt-5 justify-content-center align-items-center">
+            <li class="list-unstyled "></li>
+            <li class="list-unstyled"></li>
+            <li class="list-unstyled"></li>
+            <li class="list-unstyled"></li>
+        </ul>
+    </div>
+
+    <div class="arrow-right-index d-flex align-items-center">
+        <span class="d-flex justify-content-center align-items-center"><i class="fa-solid fa-angle-right"></i></span>
+    </div>
+
+  </div>
+
+
+
+  <!-- 前言：灰底 -->
+  <div class="forehead w-100 mt-5" >
+      <div class="container w-75 d-flex" >
+          
+        <!-- 這邊放垂直文字 + 標題 -->
+        <div class="forehead-vertical-TITLE w-25 ">
+          <h2>DAILY LIFE NEWS</h2>
+        </div>
+          
+        <!-- forehead-card-wrap用來包所有靠右側圖文 -->
+        <div class="forehead-card-wrap " > 
+
+
+          <!-- 第一段 forehead-card-TITLE -->
+          <div class=" mt-5" style="margin-left: 55px;">
+              <h2><i class="fa-solid fa-house mr-3"></i>INTERIOR ZAKKA
+                  <span style="font-size: 12px;" class="ml-2 text-muted">
+                    Interior miscellaneous goods</span>
+              </h2>
+          </div>
+          
+
+          <!-- 第一段圖文 forehead-card -->
+          <div class="mx-auto mt-3   d-flex justify-content-center align-items-center d-flex">
+      
+            <!-- 左邊箭頭 -->
+            <div  class="d-flex align-items-center justify-content-center text-muted" style=" width:50px;font-size: 28px; visibility: hidden;">
+                <i class="arrow-forehead arrow-l-forehead fa-solid fa-circle-chevron-left"></i>
+            </div>
+            
+            <!-- 第一行圖文 -->
+            <div class="wrap" style=" width:870px ;">
+
+                        <!-- 圖文列車 -->
+                        <div class="d-flex" style="width:870px;">
+                                
+                            <!-- 圖2-1 -->
+                            <div class=" col bg-white box px-0 mx-2 justify-content-center align-items-center" >
+                                <img src="./shop-img2/220602dai_002_01.jpg" alt="" class="w-100">
+                                
+                                <div class="px-3 mt-2">
+                                    <p>2022.06.16</p>
+                                    <p>おもちゃの整理に最適！収納アイテムが再入荷しました。</p>
+                                </div>
+                                
+                                <div class="text-center mt-0 logo logo1"  > </div>    
+                            </div>
+                            
+                            <!-- 圖2-2 -->
+                            <div class=" col bg-white box px-0 mx-2 justify-content-center align-items-center" >
+                                <img src="./shop-img2/220601bir_001_01.jpg" alt="" class="w-100">
+                                
+                                <div class="px-3 mt-2">
+                                    <p>2022.06.16</p>
+                                    <p>おもちゃの整理に最適！収納アイテムが再入荷しました。</p>
+                                </div>
+                                
+                                <div class="text-center mt-0 logo logo2" > </div>    
+                            </div>
+        
+                            <!-- 圖2-3 -->
+                            <div class=" col bg-white box px-0 mx-2 justify-content-center align-items-center" >
+                                <img src="./shop-img2/220615sal_001_01.jpg" alt="" class="w-100">
+                                
+                                <div class="px-3 mt-2">
+                                    <p>2022.06.16</p>
+                                    <p>おもちゃの整理に最適！収納アイテムが再入荷しました。</p>
+                                </div>
+                                
+                                <div class="text-center mt-0 logo logo3"  > </div>    
+                            </div>
+        
+                        </div>    
+        
+            
+            </div>
+            
+            <!-- 右邊箭頭 -->
+            <div class="d-flex align-items-center justify-content-center " style="width: 50px; visibility: hidden;" >
+                <i class="fa-solid fa-circle-chevron-right arrow-forehead arrow-r-forehead"></i>
+            </div>
+        
+          </div>
+
+
+          <!-- 第二段 forehead-card-TITLE -->
+          <div class=" mt-5" style="margin-left: 55px; ">
+              <h2><i class="fa-solid fa-shirt mr-3"></i>FASHION LIFE STYLE
+                  <span style="font-size: 12px;" class="ml-2 text-muted">
+                    fashion lifestyle</span>
+              </h2>
+          </div>
+              
+
+          <!-- 第二段 forehead-card(輪播牆)-->
+          <div class="mx-auto mt-3   d-flex justify-content-center align-items-center d-flex" >
+      
+            <!-- 左邊箭頭 -->
+            <div  class="d-flex align-items-center justify-content-center text-muted" style=" width:50px;font-size: 28px;">
+                <i class="arrow-forehead arrow-l-forehead fa-solid fa-circle-chevron-left"></i>
+            </div>
+            
+            <!-- 第二行圖文 -->
+            <div class="wrap-forehead" style=" width:870px">
+                        <!-- 圖文列車 -->
+                        <div class="train-forehead d-flex" style="width:2900px;">
+                            
+        
+                            <!-- 假圖：2-4 -->
+                            <div class="carousel-img col bg-white box px-0 mx-2 justify-content-center align-items-center" >
+                                <img src="./shop-img2/2206163co_001_01.jpg" alt="" class="w-100">
+                                
+                                <div class="px-3 mt-2">
+                                    <p>2022.06.16</p>
+                                    <p>おもちゃの整理に最適！収納アイテムが再入荷しました。</p>
+                                </div>
+                                
+                                <div class="text-center mt-0 logo logo1"  > </div>    
+                            </div>
+                            
+                            <!-- 假圖：2-5 -->
+                            <div class="carousel-img col bg-white box px-0 mx-2 justify-content-center align-items-center" >
+                                <img src="./shop-img2/220616lat_001_01.jpg" alt="" class="w-100">
+                                
+                                <div class="px-3 mt-2">
+                                    <p>2022.06.16</p>
+                                    <p>おもちゃの整理に最適！収納アイテムが再入荷しました。</p>
+                                </div>
+                                
+                                <div class="text-center mt-0 logo logo2" > </div>    
+                            </div>
+        
+        
+        
+                            <!-- 圖2-1 -->
+                            <div class="carousel-img col bg-white box px-0 mx-2 justify-content-center align-items-center" >
+                                <img src="./shop-img2/220616typ_002_01.jpg" alt="" class="w-100">
+                                
+                                <div class="px-3 mt-2">
+                                    <p>2022.06.16</p>
+                                    <p>おもちゃの整理に最適！収納アイテムが再入荷しました。</p>
+                                </div>
+                                
+                                <div class="text-center mt-0 logo logo1"  > </div>    
+                            </div>
+                            
+                            <!-- 圖2-2 -->
+                            <div class="carousel-img col bg-white box px-0 mx-2 justify-content-center align-items-center" >
+                                <img src="./shop-img2/20220526_bt21.jpg" alt="" class="w-100">
+                                
+                                <div class="px-3 mt-2">
+                                    <p>2022.06.16</p>
+                                    <p>おもちゃの整理に最適！収納アイテムが再入荷しました。</p>
+                                </div>
+                                
+                                <div class="text-center mt-0 logo logo2" > </div>    
+                            </div>
+        
+                            <!-- 圖2-3 -->
+                            <div class="carousel-img col bg-white box px-0 mx-2 justify-content-center align-items-center" >
+                                <img src="./shop-img2/220616dai_001_01.jpg" alt="" class="w-100">
+                                
+                                <div class="px-3 mt-2">
+                                    <p>2022.06.16</p>
+                                    <p>おもちゃの整理に最適！収納アイテムが再入荷しました。</p>
+                                </div>
+                                
+                                <div class="text-center mt-0 logo logo3"  > </div>    
+                            </div>
+        
+                            <!-- 圖2-4 -->
+                            <div class="carousel-img col bg-white box px-0 mx-2 justify-content-center align-items-center" >
+                                <img src="./shop-img2/2206163co_001_01.jpg" alt="" class="w-100">
+                                
+                                <div class="px-3 mt-2">
+                                    <p>2022.06.16</p>
+                                    <p>おもちゃの整理に最適！収納アイテムが再入荷しました。</p>
+                                </div>
+                                
+                                <div class="text-center mt-0 logo logo1"  > </div>    
+                            </div>
+                            
+                            <!-- 圖2-5 -->
+                            <div class="carousel-img col bg-white box px-0 mx-2 justify-content-center align-items-center" >
+                                <img src="./shop-img2/220616lat_001_01.jpg" alt="" class="w-100">
+                                
+                                <div class="px-3 mt-2">
+                                    <p>2022.06.16</p>
+                                    <p>おもちゃの整理に最適！収納アイテムが再入荷しました。</p>
+                                </div>
+                                
+                                <div class="text-center mt-0 logo logo2" > </div>    
+                            </div>
+        
+                            <!-- 假圖：2-1 -->
+                            <div class="carousel-img col bg-white box px-0 mx-2 justify-content-center align-items-center" >
+                                <img src="./shop-img2/220616typ_002_01.jpg" alt="" class="w-100">
+                                
+                                <div class="px-3 mt-2">
+                                    <p>2022.06.16</p>
+                                    <p>おもちゃの整理に最適！収納アイテムが再入荷しました。</p>
+                                </div>
+                                
+                                <div class="text-center mt-0 logo logo3"  > </div>    
+                            </div>
+        
+                            <!-- 假圖：2-2 -->
+                            <div class="carousel-img col bg-white box px-0 mx-2 justify-content-center align-items-center" >
+                                <img src="./shop-img2/20220526_bt21.jpg" alt="" class="w-100">
+                                
+                                <div class="px-3 mt-2">
+                                    <p>2022.06.16</p>
+                                    <p>おもちゃの整理に最適！収納アイテムが再入荷しました。</p>
+                                </div>
+                                
+                                <div class="text-center mt-0 logo logo2" > </div>    
+                            </div>
+        
+                            <!-- 假圖：2-3 -->
+                            <div class="carousel-img col bg-white box px-0 mx-2 justify-content-center align-items-center" >
+                                <img src="./shop-img2/220616dai_001_01.jpg" alt="" class="w-100">
+                                
+                                <div class="px-3 mt-2">
+                                    <p>2022.06.16</p>
+                                    <p>おもちゃの整理に最適！収納アイテムが再入荷しました。</p>
+                                </div>
+                                
+                                <div class="text-center mt-0 logo logo3"  > </div>    
+                            </div>
+        
+        
+                        </div>    
+        
+                        <!-- 滑動小點 -->
+                        <ul class="slider-dots-forehead d-flex mt-5 justify-content-center align-items-center">
+                            <li class="list-unstyled "></li>
+                            <li class="list-unstyled"></li>
+                            <li class="list-unstyled"></li>
+                            <li class="list-unstyled"></li>
+                            <li class="list-unstyled"></li>
+                        </ul>
+            
+            </div>
+            
+            <!-- 右邊箭頭 -->
+            <div class="d-flex align-items-center justify-content-center " style="width: 50px;" >
+                <i class="fa-solid fa-circle-chevron-right arrow-forehead arrow-r-forehead"></i>
+            </div>
+        
+          </div>
+
+
+        </div>
+
+
+      </div>
+  </div>
+
+
+    <!-- 導覽列上方灰色橫排 -->
+    <div class="w-100 bg-muted pickup">
+        <h2>PICKUP</h2>
+        <div class="row d-flex mx-auto w-75 mt-5" >
+          <div class="col pickup-img" >
+            <img src="./shop-img2/220613lat_001_01.jpg" alt="" >
+            <p>Lattice</p>
+            <p>NAI/SHION 第２弾発売開始！！</p>
+          </div>
+          <div class="col pickup-img" >
+            <img src="./shop-img2/220602dai_002_01.jpg" alt="" >
+            <p>Daily russet</p>
+            <p>◆ブランド10周年企画◆ お客様のお声にお応えしたアンケートバッグが登場！</p>
+          </div>
+          <div class="col pickup-img" >
+            <img src="./shop-img2/220612dis_001_01.jpg" alt="" >
+            <p>Discoat</p>
+            <p>instagramで大人気！注目のアイテム特集♪</p>
+          </div>
+          <div class="col pickup-img" >
+            <img src="./shop-img2/220615dis_001_01.jpg" alt="" >
+            <p>CIAOPANICTYPY</p>
+            <p>【今月のバイヤー本気推し!! vol.4】</p>
+          </div>
+]
+        </div>
+    </div>
+
+
+    <!-- 左側導覽列 -->
+
+    <div class="container mt-5">
+      <div class="row">
+        <!-- 左欄 -->
+        <div class="col-3">
+        <!-- 如何更細微的調欄寬?? -->
+      
+              <!-- dropdown-toggle 是決定是否button有箭頭 -->
+              <!-- data-bs-toggle="dropdown" 決定是否可以點擊後產生選單 -->
+              <!-- aria-expanded="false" 跟JS回報列表目前狀態為開還是關 -->
+              <!-- dropright 可以讓下拉選單變右邊出來 -->
+
+              <!-- 要記得做讓商品數量連動!!!後台管理 -->
+
+
+              <!-- aria-label 當沒有輸入值時，回傳給電腦的值 -->
+              <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="キーワードを入力してください" aria-label="キーワードを入力してください">
+              </div>
+              <button type="button" class="btn btn-secondary w-100">檢索</button>
+                            
+              <br>
+
+              <div class="margin-top-bottom">
+                <h5>販売タイプから探す</h5>
+              </div> 
+              <a class="btn btn-white d-block  padding-top-bottom border-bottom border-top" href="#" role="button">通常販売</a>
+              <a class="btn btn-white d-block  padding-top-bottom border-bottom " href="#" role="button">予約販売</a>
+            
+
+              <br>
+
+              <!-- checkbox -->
+              <div class="margin-top-bottom">
+                <h5>商品タイプから探す</h5>
+              </div>  
+
+              <div class="form-check margin-top-bottom ">
+                <input class="form-check-input " type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                  &nbsp タイムセール商品
+                </label>
+              </div>
+
+              <div class="form-check margin-top-bottom ">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                  &nbsp WEB限定商品
+                </label>
+              </div>
+
+              <div class="form-check margin-top-bottom ">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                  &nbsp 手洗い可商品
+                </label>
+              </div>
+              
+              <div class="form-check margin-top-bottom ">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                  &nbsp コラボ商品
+                </label>
+              </div>
+              
+              <div class="form-check margin-top-bottom ">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                  &nbsp サステナブル商品
+                </label>
+              </div>
+              
+
+
+              <br>
+
+
+
+              <!-- 純按鈕表單 -->
+              <div class="margin-top-bottom">
+                <h5>ブランドから探す</h5>
+              </div>  
+
+              <div class="dropdown    dropright border ">
+                <a class="btn padding-top-bottom " href="#" role="button" id="dropdownMenuLink" aria-expanded="false">
+                  ブランドを選択してください <i class="fa-solid fa-angle-right padding-left"></i>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                  <li><a class="dropdown-item" href="#">ビブ(3)</a></li>
+                  <li><a class="dropdown-item" href="#">ロンパース(6)</a></li>
+                  <li><a class="dropdown-item" href="#">ベビー用品(13)</a></li>
+                  <li><a class="dropdown-item" href="#">ベビーギフト(40)</a></li>
+                </ul>
+              </div>   
+
+
+            <br>
+
+
+            <div class="margin-top-bottom ">
+              <h5>カテゴリから探す</h5>
+            </div>  
+
+            <div class="dropdown    dropright border-bottom ">
+              <a class="btn padding-top-bottom " href="#" role="button" id="dropdownMenuLink" aria-expanded="false">
+                すべて(27422)
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <li><a class="dropdown-item" href="#">ビブ(3)</a></li>
+                <li><a class="dropdown-item" href="#">ロンパース(6)</a></li>
+                <li><a class="dropdown-item" href="#">ベビー用品(13)</a></li>
+                <li><a class="dropdown-item" href="#">ベビーギフト(40)</a></li>
+              </ul>
+            </div>   
+
+            <div class="dropdown dropright border-bottom ">
+              <a class="btn padding-top-bottom " href="#" role="button" id="dropdownMenuLink" aria-expanded="false">
+                パンツ(1626)
+              </a>
+            
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <li><a class="dropdown-item" href="#">デニムパンツ(324)</a></li>
+                <li><a class="dropdown-item" href="#">カーゴパンツ(2)</a></li>
+                <li><a class="dropdown-item" href="#">チノパンツ(6)</a></li>
+                <li><a class="dropdown-item" href="#">スラックス(26)</a></li>
+                <li><a class="dropdown-item" href="#">パンツ(1787)</a></li>
+              </ul>
+            </div>
+
+            <div class="dropdown dropright border-bottom ">
+              <a class="btn dropdown-button " href="#" role="button" id="dropdownMenuLink" aria-expanded="false">
+                トップス(8206)
+              </a>
+            
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <li><a class="dropdown-item" href="#">ブラ(10)</a></li>
+                <li><a class="dropdown-item" href="#">ショーツ(12)</a></li>
+                <li><a class="dropdown-item" href="#">ルームウェア(22)</a></li>
+                <li><a class="dropdown-item" href="#">その他アンダーウェア/インナー(63)</a></li>
+              </ul>
+            </div>
+
+            <div class="dropdown dropright border-bottom ">
+              <a class="btn padding-top-bottom " href="#" role="button" id="dropdownMenuLink" aria-expanded="false">
+                オールインワン・サロペット(98)
+              </a>
+            
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <li><a class="dropdown-item" href="#">スカート(1450)</a></li>
+                <li><a class="dropdown-item" href="#">デニムスカート(10)</a></li>
+
+              </ul>
+            </div>
+
+            <div class="dropdown dropright border-bottom ">
+              <a class="btn padding-top-bottom " href="#" role="button" id="dropdownMenuLink" aria-expanded="false">
+                ワンピース(1999)
+              </a>
+            
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <li><a class="dropdown-item" href="#">サロペット/オーバーオール(89)</a></li>
+                <li><a class="dropdown-item" href="#">つなぎ/オールインワン(9)</a></li>
+              </ul>
+            </div>
+
+
+
+        </div>
+
+
+    <!-- 右側欄位 -->
+    <!-- border除了寫border-顏色代號之外，還要多寫border才會顯現 -->
+    <div class="col-9 ">
+          
+        <!-- 第一行照片牆 -->
+        <div class="row">
+        
+        <div class="w-33">
+          <div class="card ma" style="width: 22rem;">
+            <img src="./shop-img/news_220428_01.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text">BT21のタイアップアイテムが大集結！</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="w-33">
+          <div class="card ma" style="width: 22rem;">
+            <img src="./shop-img/news_220428_02.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text">BT21のタイアップアイテムが大集結！</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="w-33">
+          <div class="card ma" style="width: 22rem;">
+            <img src="./shop-img/news_220428_03.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text">BT21のタイアップアイテムが大集結！</p>
+            </div>
+          </div>
+        </div>
+
+        </div>
+
+        <br>
+
+
+  <!-- 第一組arrow Carousel -->
+
+        <!-- 幻燈片TITLE -->
+        <div class="carousel-title d-flex align-items-center justify-content-between" style="margin-top:90px ;">
+        <h2 style="font-weight: 200;" class="w-75">Recommended items for you</h2>
+        <span>すべて見る<i class="fa-solid fa-chevron-right ml-2"></i></span>
+        </div>
+
+        <!-- 左右輪播牆 -->
+        <div class=" w-100 mt-4  cloth-carousel" >
+
+          <!-- arrow放這邊 -->
+          <div class="arrow arrow-left d-flex align-items-center">
+              <span class="d-flex justify-content-center align-items-center"><i class="fa-solid fa-chevron-left"></i></span>
+          </div>
+      
+          <!-- wrap是要overflow:hidden的人 -->
+          <div class="wrap" style="width: 100%; overflow: hidden;">
+              <!-- 5張照片110% -->
+              <div class="train d-flex" style="width: 220%;">
+                  <div class="card">
+                      <img src="./shop-img2/421406_1705371_1.jpg" alt="">
+                      <h5>CIAOPANIC TYPY</h5>
+                      <p>【PAL Tee】ユニセックスバックプリントTee</p>
+                      <span>¥ 3,190</span>
+                  </div>
+                  <div class="card">
+                      <img src="./shop-img2/425059_1714645_1.jpg" alt="">
+                      <h5>CIAOPANIC TYPY</h5>
+                      <p>【PAL Tee】ユニセックスバックプリントTee</p>
+                      <span>¥ 3,190</span>
+                  </div>
+                  <div class="card">
+                      <img src="./shop-img2/431894_1733587_1.jpg" alt="">
+                      <h5>CIAOPANIC TYPY</h5>
+                      <p>【PAL Tee】ユニセックスバックプリントTee</p>
+                      <span>¥ 3,190</span>
+                  </div>
+                  <div class="card">
+                      <img src="./shop-img2/432652_1735953_1.jpg" alt="">
+                      <h5>CIAOPANIC TYPY</h5>
+                      <p>【PAL Tee】ユニセックスバックプリントTee</p>
+                      <span>¥ 3,190</span>
+                  </div>
+                  <div class="card">
+                      <img src="./shop-img2/438912_1752321_1.jpg" alt="">
+                      <h5>CIAOPANIC TYPY</h5>
+                      <p>【PAL Tee】ユニセックスバックプリントTee</p>
+                      <span>¥ 3,190</span>
+                  </div>
+                  <div class="card">
+                      <img src="./shop-img2/436384_1745446_1.jpg" alt="">
+                      <h5>CIAOPANIC TYPY</h5>
+                      <p>【PAL Tee】ユニセックスバックプリントTee</p>
+                      <span>¥ 3,190</span>
+                  </div>
+                  <div class="card">
+                      <img src="./shop-img2/436504_1745848_1.jpg" alt="">
+                      <h5>CIAOPANIC TYPY</h5>
+                      <p>【PAL Tee】ユニセックスバックプリントTee</p>
+                      <span>¥ 3,190</span>
+                  </div>
+                  <div class="card">
+                      <img src="./shop-img2/436730_1746293_1.jpg" alt="">
+                      <h5>CIAOPANIC TYPY</h5>
+                      <p>【PAL Tee】ユニセックスバックプリントTee</p>
+                      <span>¥ 3,190</span>
+                  </div>
+                  <div class="card">
+                      <img src="./shop-img2/438999_1752541_1.jpg" alt="">
+                      <h5>CIAOPANIC TYPY</h5>
+                      <p>【PAL Tee】ユニセックスバックプリントTee</p>
+                      <span>¥ 3,190</span>
+                  </div>
+                  <div class="card">
+                      <img src="./shop-img2/438881_1752191_1.jpg" alt="">
+                      <h5>CIAOPANIC TYPY</h5>
+                      <p>【PAL Tee】ユニセックスバックプリントTee</p>
+                      <span>¥ 3,190</span>
+                  </div>
+              </div>
+
+        </div>
+
+
+        <!-- arrow放這邊 -->
+        <div class="arrow arrow-right d-flex align-items-center" >
+            <span class="d-flex justify-content-center align-items-center" ><i class="fa-solid fa-angle-right"></i></span>
+        </div>
+
+        </div>
+
+
+
+  <!-- 第二組 Carousel -->
+
+        <!-- 幻燈片TITLE -->
+        <div class="carousel-title d-flex align-items-center justify-content-between" style="margin-top:60px ;">
+          <!-- <p>5% or more points can be redeemed at any time!</p> -->
+          <h2 style="font-weight: 200;" class="w-75">Reserved items</h2>
+          <span>すべて見る<i class="fa-solid fa-chevron-right ml-2"></i></span>
+          </div>
+          <!-- 左右輪播牆 -->
+          <div class=" w-100 mt-4  cloth-carousel">
+    
+            <!-- arrow放這邊 -->
+            <div class="arrow arrow-left-2 d-flex align-items-center">
+                <span class="d-flex justify-content-center align-items-center"><i class="fa-solid fa-chevron-left"></i></span>
+            </div>
+        
+            <!-- wrap是要overflow:hidden的人 -->
+            <div class="wrap" style="width: 100%; overflow: hidden;">
+                <!-- 5張照片110% -->
+                <div class="train-2 d-flex" style="width: 220%;">
+                    <div class="card">
+                        <img src="./shop-img2/419769_1701112_1.jpg" alt="">
+                        <h5>CIAOPANIC TYPY</h5>
+                        <p>【PAL Tee】ユニセックスバックプリントTee</p>
+                        <span>¥ 3,190</span>
+                    </div>
+                    <div class="card">
+                        <img src="./shop-img2/420340_1702606_1.jpg" alt="">
+                        <h5>CIAOPANIC TYPY</h5>
+                        <p>【PAL Tee】ユニセックスバックプリントTee</p>
+                        <span>¥ 3,190</span>
+                    </div>
+                    <div class="card">
+                        <img src="./shop-img2/420461_1702921_1.jpg" alt="">
+                        <h5>CIAOPANIC TYPY</h5>
+                        <p>【PAL Tee】ユニセックスバックプリントTee</p>
+                        <span>¥ 3,190</span>
+                    </div>
+                    <div class="card">
+                        <img src="./shop-img2/420637_1703452_1.jpg" alt="">
+                        <h5>CIAOPANIC TYPY</h5>
+                        <p>【PAL Tee】ユニセックスバックプリントTee</p>
+                        <span>¥ 3,190</span>
+                    </div>
+                    <div class="card">
+                        <img src="./shop-img2/421406_1705371_1.jpg" alt="">
+                        <h5>CIAOPANIC TYPY</h5>
+                        <p>【PAL Tee】ユニセックスバックプリントTee</p>
+                        <span>¥ 3,190</span>
+                    </div>
+                    <div class="card">
+                        <img src="./shop-img2/425059_1714645_1.jpg" alt="">
+                        <h5>CIAOPANIC TYPY</h5>
+                        <p>【PAL Tee】ユニセックスバックプリントTee</p>
+                        <span>¥ 3,190</span>
+                    </div>
+                    <div class="card">
+                        <img src="./shop-img2/417983_1695804_1.jpg" alt="">
+                        <h5>CIAOPANIC TYPY</h5>
+                        <p>【PAL Tee】ユニセックスバックプリントTee</p>
+                        <span>¥ 3,190</span>
+                    </div>
+                    <div class="card">
+                        <img src="./shop-img2/418147_1696322_1.jpg" alt="">
+                        <h5>CIAOPANIC TYPY</h5>
+                        <p>【PAL Tee】ユニセックスバックプリントTee</p>
+                        <span>¥ 3,190</span>
+                    </div>
+                    <div class="card">
+                        <img src="./shop-img2/413071_1680467_1.jpg" alt="">
+                        <h5>CIAOPANIC TYPY</h5>
+                        <p>【PAL Tee】ユニセックスバックプリントTee</p>
+                        <span>¥ 3,190</span>
+                    </div>
+                    <div class="card">
+                        <img src="./shop-img2/412404_1678233_1.jpg" alt="">
+                        <h5>CIAOPANIC TYPY</h5>
+                        <p>【PAL Tee】ユニセックスバックプリントTee</p>
+                        <span>¥ 3,190</span>
+                    </div>
+                </div>
+    
+          </div>
+    
+    
+          <!-- arrow放這邊 -->
+          <div class="arrow arrow-right-2 d-flex align-items-center" >
+              <span class="d-flex justify-content-center align-items-center" ><i class="fa-solid fa-angle-right"></i></span>
+          </div>
+    
+          </div>
+
+    </div>
+
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+
+    <script src="./shop.js"></script>
+
+</body>
+</html>
