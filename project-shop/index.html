@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
     <!-- font awesome -->
-    <link href="./fontawesome-(free-6.1.1-web)/css/all.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
 
     <style>
 
@@ -139,7 +140,25 @@
             height: 100%;
             font-size: 16px;
         }
+        .arrow-left-2{
+            position: absolute;
+            left: -20px;
+            z-index: 5;
+            width: 50px;
+            height: 100%;
+            font-size: 16px;
+        }
         .arrow-right{
+            position: absolute;
+            right: -40px;
+            top: 0px;
+            z-index: 5;
+            width: 50px;
+            height: 100%;
+            font-size: 16px;
+        }
+
+        .arrow-right-2{
             position: absolute;
             right: -40px;
             top: 0px;
@@ -153,7 +172,26 @@
             width: 30px;
             height: 30px;
             background-color: #fff;
-            outline: 1px solid gray;
+            /* outline: 1px solid gray; */
+        }
+        .arrow-left-2>span, .arrow-right-2>span{
+            width: 30px;
+            height: 30px;
+            background-color: #fff;
+            /* outline: 1px solid gray; */
+        }
+
+        .arrow-right img{
+          width: 20px;
+        }
+        .arrow-left img{
+          width: 20px;
+        }
+        .arrow-right-2 img{
+          width: 20px;
+        }
+        .arrow-left-2 img{
+          width: 20px;
         }
 
         .arrow:hover{
@@ -161,6 +199,12 @@
         }
 
         .train{
+            /* transform: translateX(-990px); */
+            /* 每次移動545 */
+            /* 最後一個移動-920 */
+            transition: .5s ease;
+        }
+        .train-2{
             /* transform: translateX(-990px); */
             /* 每次移動545 */
             /* 最後一個移動-920 */
@@ -229,6 +273,7 @@
         }
         
         .arrow-left-index{
+            /* outline: 1px solid red; */
             width: 60px;
             height: 100%;
             /* background-color: rgb(230, 20, 20); */
@@ -238,6 +283,14 @@
             left: 200px;
             z-index: 5;
             /* top:50% */
+        }
+
+        .arrow-left-index img{
+          width: 30px;
+        }
+
+        .arrow-right-index img{
+          width: 30px;
         }
 
 
@@ -257,21 +310,24 @@
         .arrow-left-index>span{
             width: 50px;
             height: 50px;
-            background-color: rgba(255, 255, 255, 0.715);
-            outline: 1px solid gray;
+            /* background-color: rgba(255, 255, 255, 0.715); */
+            /* outline: 1px solid gray; */
+            background-color: #fff;
             font-size: 18px;
             color:gray;
         }
         .arrow-right-index>span{
             width: 50px;
             height: 50px;
-            background-color: rgba(255, 255, 255, 0.715);
-            outline: 1px solid gray;
+            /* background-color: rgba(255, 255, 255, 0.715); */
+            /* outline: 1px solid gray; */
+            background-color: #fff;
             font-size: 18px;
             color:gray;
+
         }
 
-        .arrow-left-index>span:hover, .arrow-right>span:hover {
+        .arrow-left-index>span:hover, .arrow-right-index>span:hover {
             cursor: pointer;
         }
         .arrow-left-index>span:hover, .arrow-right-2>span:hover {
@@ -386,6 +442,10 @@
           opacity: .7;
         }
 
+        .carousel2{
+          margin-bottom: 50px;
+        }
+
 
   </style>
 
@@ -407,7 +467,7 @@
         <ul class="navbar-nav me-auto mb-2 mb-lg-0 ml-auto" >
 
           <li class="nav-item text-center mx-3" >
-            <i class="fa-solid fa-heart w-100" style="font-size: 25px"></i>
+            <!-- <i class="fa-solid fa-heart w-100" style="font-size: 25px"></i> -->
             <a class="nav-link active text-dark" aria-current="page" href="#" style="font-size: 12px">favorite</a>
           </li>
 
@@ -422,7 +482,7 @@
           </li>
 
           <li class="nav-item text-center mx-3">
-            <i class="fa-solid fa-user" style="font-size: 25px"></i>
+            <!-- <i class="fa-solid fa-user" style="font-size: 25px"></i> -->
             <a class="nav-link text-dark" href="#" style="font-size: 12px">login</a>
           </li>
 
@@ -484,7 +544,12 @@
 
     <!-- arrow -->
     <div class="arrow-left-index d-flex align-items-center">
-        <span class="d-flex justify-content-center align-items-center"><i class="fa-solid fa-chevron-left"></i></span>
+        <span class="d-flex justify-content-center align-items-center">
+        
+          <img src="./shop-img2/left_arrow.svg" alt="">
+          <!-- <i class="fa-solid fa-chevron-left"></i> -->
+        
+        </span>
     </div>
 
     <!-- 圖文放這邊 -->
@@ -559,7 +624,12 @@
     </div>
 
     <div class="arrow-right-index d-flex align-items-center">
-        <span class="d-flex justify-content-center align-items-center"><i class="fa-solid fa-angle-right"></i></span>
+        <span class="d-flex justify-content-center align-items-center">
+          
+          <!-- <i class="fa-solid fa-angle-right"></i> -->
+          <img src="./shop-img2/right_arrow.svg" alt="">
+        
+        </span>
     </div>
 
   </div>
@@ -1034,7 +1104,7 @@
         
         <div class="w-33">
           <div class="card ma" style="width: 22rem;">
-            <img src="./shop-img/news_220428_01.jpg" class="card-img-top" alt="...">
+            <img src="./shop-img2/20220526_bt21.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <p class="card-text">BT21のタイアップアイテムが大集結！</p>
             </div>
@@ -1043,7 +1113,7 @@
 
         <div class="w-33">
           <div class="card ma" style="width: 22rem;">
-            <img src="./shop-img/news_220428_02.jpg" class="card-img-top" alt="...">
+            <img src="./shop-img2/20220602_paltee_002.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <p class="card-text">BT21のタイアップアイテムが大集結！</p>
             </div>
@@ -1052,7 +1122,7 @@
 
         <div class="w-33">
           <div class="card ma" style="width: 22rem;">
-            <img src="./shop-img/news_220428_03.jpg" class="card-img-top" alt="...">
+            <img src="./shop-img2/2206163co_001_01.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <p class="card-text">BT21のタイアップアイテムが大集結！</p>
             </div>
@@ -1069,7 +1139,11 @@
         <!-- 幻燈片TITLE -->
         <div class="carousel-title d-flex align-items-center justify-content-between" style="margin-top:90px ;">
         <h2 style="font-weight: 200;" class="w-75">Recommended items for you</h2>
-        <span>すべて見る<i class="fa-solid fa-chevron-right ml-2"></i></span>
+        <span>すべて見る
+          
+          <!-- <i class="fa-solid fa-chevron-right ml-2"></i> -->
+        
+        </span>
         </div>
 
         <!-- 左右輪播牆 -->
@@ -1077,7 +1151,12 @@
 
           <!-- arrow放這邊 -->
           <div class="arrow arrow-left d-flex align-items-center">
-              <span class="d-flex justify-content-center align-items-center"><i class="fa-solid fa-chevron-left"></i></span>
+              <span class="d-flex justify-content-center align-items-center">
+                
+                <!-- <i class="fa-solid fa-chevron-left"></i> -->
+              <img src="./shop-img2/left_arrow.svg" alt="">
+              
+              </span>
           </div>
       
           <!-- wrap是要overflow:hidden的人 -->
@@ -1151,33 +1230,151 @@
 
         <!-- arrow放這邊 -->
         <div class="arrow arrow-right d-flex align-items-center" >
-            <span class="d-flex justify-content-center align-items-center" ><i class="fa-solid fa-angle-right"></i></span>
+            <span class="d-flex justify-content-center align-items-center" >
+              
+              <!-- <i class="fa-solid fa-angle-right"></i> -->
+              <img src="./shop-img2/right_arrow.svg" alt="">
+            
+            </span>
         </div>
 
         </div>
 
 
 
-  <!-- 第二組 Carousel -->
+
+  <!-- 第二組arrow Carousel -->
 
         <!-- 幻燈片TITLE -->
-        <div class="carousel-title d-flex align-items-center justify-content-between" style="margin-top:60px ;">
-          <!-- <p>5% or more points can be redeemed at any time!</p> -->
-          <h2 style="font-weight: 200;" class="w-75">Reserved items</h2>
-          <span>すべて見る<i class="fa-solid fa-chevron-right ml-2"></i></span>
+        <div class="carousel-title d-flex align-items-center justify-content-between" style="margin-top:90px ;">
+        <h2 style="font-weight: 200;" class="w-75">Reserved items</h2>
+        <span>すべて見る
+          
+          <!-- <i class="fa-solid fa-chevron-right ml-2"></i> -->
+        
+        </span>
+        </div>
+
+        <!-- 左右輪播牆 -->
+        <div class=" w-100 mt-4  cloth-carousel carousel2" >
+
+          <!-- arrow放這邊 -->
+          <div class="arrow arrow-left-2 d-flex align-items-center">
+              <span class="d-flex justify-content-center align-items-center">
+                
+                <!-- <i class="fa-solid fa-chevron-left"></i> -->
+              <img src="./shop-img2/left_arrow.svg" alt="">
+              
+              </span>
           </div>
+      
+          <!-- wrap是要overflow:hidden的人 -->
+          <div class="wrap" style="width: 100%; overflow: hidden;">
+              <!-- 5張照片110% -->
+              <div class="train-2 d-flex" style="width: 220%;">
+                  <div class="card">
+                    <img src="./shop-img2/419769_1701112_1.jpg" alt="">
+                      <h5>CIAOPANIC TYPY</h5>
+                      <p>【PAL Tee】ユニセックスバックプリントTee</p>
+                      <span>¥ 3,190</span>
+                  </div>
+                  <div class="card">
+                   <img src="./shop-img2/420461_1702921_1.jpg" alt="">
+                      <h5>CIAOPANIC TYPY</h5>
+                      <p>【PAL Tee】ユニセックスバックプリントTee</p>
+                      <span>¥ 3,190</span>
+                  </div>
+                  <div class="card">
+                    <img src="./shop-img2/420461_1702921_1.jpg" alt="">
+                      <h5>CIAOPANIC TYPY</h5>
+                      <p>【PAL Tee】ユニセックスバックプリントTee</p>
+                      <span>¥ 3,190</span>
+                  </div>
+                  <div class="card">
+                    <img src="./shop-img2/420637_1703452_1.jpg" alt="">
+                      <h5>CIAOPANIC TYPY</h5>
+                      <p>【PAL Tee】ユニセックスバックプリントTee</p>
+                      <span>¥ 3,190</span>
+                  </div>
+                  <div class="card">
+                    <img src="./shop-img2/421406_1705371_1.jpg" alt="">
+                      <h5>CIAOPANIC TYPY</h5>
+                      <p>【PAL Tee】ユニセックスバックプリントTee</p>
+                      <span>¥ 3,190</span>
+                  </div>
+                  <div class="card">
+                    <img src="./shop-img2/425059_1714645_1.jpg" alt="">
+                      <h5>CIAOPANIC TYPY</h5>
+                      <p>【PAL Tee】ユニセックスバックプリントTee</p>
+                      <span>¥ 3,190</span>
+                  </div>
+                  <div class="card">
+                    <img src="./shop-img2/417983_1695804_1.jpg" alt="">
+                      <h5>CIAOPANIC TYPY</h5>
+                      <p>【PAL Tee】ユニセックスバックプリントTee</p>
+                      <span>¥ 3,190</span>
+                  </div>
+                  <div class="card">
+                    <img src="./shop-img2/418147_1696322_1.jpg" alt="">
+                      <h5>CIAOPANIC TYPY</h5>
+                      <p>【PAL Tee】ユニセックスバックプリントTee</p>
+                      <span>¥ 3,190</span>
+                  </div>
+                  <div class="card">
+                    <img src="./shop-img2/413071_1680467_1.jpg" alt="">
+                      <h5>CIAOPANIC TYPY</h5>
+                      <p>【PAL Tee】ユニセックスバックプリントTee</p>
+                      <span>¥ 3,190</span>
+                  </div>
+                  <div class="card">
+                     <img src="./shop-img2/412404_1678233_1.jpg" alt="">
+                      <h5>CIAOPANIC TYPY</h5>
+                      <p>【PAL Tee】ユニセックスバックプリントTee</p>
+                      <span>¥ 3,190</span>
+                  </div>
+              </div>
+
+        </div>
+
+
+        <!-- arrow放這邊 -->
+        <div class="arrow arrow-right-2 d-flex align-items-center" >
+            <span class="d-flex justify-content-center align-items-center" >
+              
+              <!-- <i class="fa-solid fa-angle-right"></i> -->
+              <img src="./shop-img2/right_arrow.svg" alt="">
+            
+            </span>
+        </div>
+
+        </div>
+
+
+
+  <!-- 第三組 Carousel -->
+
+
+        <!-- 幻燈片TITLE -->
+        <!-- <div class="carousel-title d-flex align-items-center justify-content-between" style="margin-top:60px ;">
+          <h2 style="font-weight: 200;" class="w-75">Reserved items</h2>
+          <span>すべて見る
+             -->
+            <!-- <i class="fa-solid fa-chevron-right ml-2"></i> -->
+          
+          <!-- </span> -->
+          <!-- </div> -->
           <!-- 左右輪播牆 -->
-          <div class=" w-100 mt-4  cloth-carousel">
+          <!-- <div class=" w-100 mt-4  cloth-carousel">
     
             <!-- arrow放這邊 -->
-            <div class="arrow arrow-left-2 d-flex align-items-center">
+            <!-- <div class="arrow arrow-left-2 d-flex align-items-center">
                 <span class="d-flex justify-content-center align-items-center"><i class="fa-solid fa-chevron-left"></i></span>
-            </div>
+            </div> -->
         
             <!-- wrap是要overflow:hidden的人 -->
-            <div class="wrap" style="width: 100%; overflow: hidden;">
+            <!-- <div class="wrap" style="width: 100%; overflow: hidden;">
                 <!-- 5張照片110% -->
-                <div class="train-2 d-flex" style="width: 220%;">
+                <!-- <div class="train-2 d-flex" style="width: 220%;">
                     <div class="card">
                         <img src="./shop-img2/419769_1701112_1.jpg" alt="">
                         <h5>CIAOPANIC TYPY</h5>
@@ -1240,20 +1437,22 @@
                     </div>
                 </div>
     
-          </div>
+          </div>  -->
     
     
           <!-- arrow放這邊 -->
-          <div class="arrow arrow-right-2 d-flex align-items-center" >
+          <!-- <div class="arrow arrow-right-2 d-flex align-items-center" >
               <span class="d-flex justify-content-center align-items-center" ><i class="fa-solid fa-angle-right"></i></span>
           </div>
     
-          </div>
-
+          </div> -->
+  
     </div>
 
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-    <script src="./js/jquery-3.6.0.min.js"></script>
+    <!-- <script src="./js/jquery-3.6.0.min.js"></script> -->
 
     <script src="./shop.js"></script>
 
