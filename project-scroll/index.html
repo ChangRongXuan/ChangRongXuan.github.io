@@ -229,8 +229,17 @@
             top: 0px ;
             left: 200px;
             z-index: 5;
-            /* top:50% */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
         }
+
+        .arrow-left img{
+            width: 30px;
+        }
+
+
         .arrow-right{
             width: 60px;
             height: 100%;
@@ -242,20 +251,26 @@
             z-index: 5;
             /* top:50% */
         }
+
+        .arrow-right img{
+            width: 30px;
+        }
         
         .arrow-left>span{
             width: 50px;
             height: 50px;
-            background-color: rgba(255, 255, 255, 0.715);
-            outline: 1px solid gray;
+            /* background-color: rgba(255, 255, 255, 0.715); */
+            /* outline: 1px solid gray; */
+            background-color: white;
             font-size: 18px;
             color:gray;
         }
         .arrow-right>span{
             width: 50px;
             height: 50px;
-            background-color: rgba(255, 255, 255, 0.715);
-            outline: 1px solid gray;
+            /* background-color: rgba(255, 255, 255, 0.715); */
+            /* outline: 1px solid gray; */
+            background-color: white;
             font-size: 18px;
             color:gray;
         }
@@ -314,6 +329,7 @@
         .guide_faq{
             width: 85%;
             height: 100vh;
+            position: relative;
         }
         .guide_faq .col{
             /* overflow: hidden; */
@@ -349,8 +365,17 @@
         .guide_faq_title{
             position: absolute;
             left: 8%;
-            top: -5%;
+            top: 22%;
             z-index: 5;
+            /* outline: 1px solid red; */
+        }
+
+        .guide_faq_title_2{
+            position: absolute;
+            left: 55%;
+            top: 22.5%;
+            z-index: 5;
+            /* outline: 1px solid red; */
         }
 
         .booknow{
@@ -369,6 +394,23 @@
             transform: scale(1.1);
             transition: .4s ease;
             cursor: pointer;
+        }
+
+        .notion-more{
+            /* outline: 1px solid red; */
+        }
+
+        .testimg{
+            /* outline: 1px solid blue; */
+            width: 40px;
+        }
+
+        .testimg:hover{
+            cursor: pointer;
+        }
+
+        .testimg>img{
+            width: 100%;
         }
 
     </style>
@@ -460,7 +502,9 @@
         <!-- arrow -->
         <div class="arrow-left d-flex align-items-center">
             <span class="d-flex justify-content-center align-items-center">
-                <a href="{{ site.baseurl }}/index.html"><i class="fa-solid fa-chevron-left"></i></a></span>
+                <img src="./scroll-img/left_arrow.svg" alt="">
+                <!-- <i class="fa-solid fa-chevron-left"></i> -->
+            </span>
         </div>
     
         <!-- 圖文放這邊 -->
@@ -473,7 +517,7 @@
     
                 <!-- 假圖: 3 -->
                 <div class="col  h-100 clothimg " >
-                    <li class="list-unstyled text-center " style="outline: 3px solid purple;" >
+                    <li class="list-unstyled text-center" >
                         <img src="./scroll-img/3.jpg" alt=""  >
                     </li>
                 </div>
@@ -485,7 +529,7 @@
                         <img src="./scroll-img/4.jpg" alt="" >
                     </li>
                 </div>
-    
+
     
                 <div class="col  h-100 clothimg" >
                     <li class="list-unstyled text-center " >
@@ -535,7 +579,13 @@
         </div>
     
         <div class="arrow-right d-flex align-items-center">
-            <span class="d-flex justify-content-center align-items-center"> <a href="{{ site.baseurl }}/index.html"><i class="fa-solid fa-angle-right"></i></a></span>
+            <span class="d-flex justify-content-center align-items-center"> 
+
+                <img src="./scroll-img/right_arrow.svg" alt="" class="right_arrow">
+                
+                <!-- <a href="{{ site.baseurl }}/index.html"><i class="fa-solid fa-angle-right"></i></a> -->
+            
+            </span>
         </div>
     
     </div>
@@ -547,7 +597,7 @@
         <div class="row h-100">
             
             <!-- 文字放這邊 -->
-            <div class="col-6 h-100 d-flex justify-content-center align-items-center " style="outline: 1px solid red;">
+            <div class="col-6 h-100 d-flex justify-content-center align-items-center" >
 
                 <div class="picture-notion picture-nr w-50 h-50 mx-auto" >
                     <img src="./scroll-img/campers-lg.svg" alt="" class="w-75 notion-tr" >
@@ -556,7 +606,10 @@
                     <p>乗り心地と圧倒的な走破性能を兼ね備えた、 <br>
                         TOYOTAハイラックスをカスタムした <br>
                         トラックキャンパーをラインナップしています。</p>
-                    <a href="#" style="outline: 1px solid red;" class="notion-more"><img src="./scroll-img/more.svg" alt=""  style="outline: 1px solid blue;"></a>
+                    <div class="testimg">
+                        <img src="./scroll-img/more.svg" alt="">
+                    </div>
+                
                 </div>
 
             </div>
@@ -578,7 +631,9 @@
                     <p>パーソナライズされた旅のかたち。
                     <p>北海道を知り尽くしたコンシェルジュが <br>
                         旅のプランから道中の様々なご要望をお伺いします。</p>
-                    <a href="#" class="ml-auto"><img src="./scroll-img/more.svg" alt="" ></a>
+                    <div class="testimg">
+                        <img src="./scroll-img/more.svg" alt="" >
+                    </div>
                 </div>
             </div>
         </div>    
@@ -587,25 +642,30 @@
 
 <!-- GUIDE + FAQ -->
     <div class="guide_faq mx-auto d-flex justify-content-between align-items-center">
-        <div class="col guide h-50" style="overflow:hidden; outline:1px solid red">
+
+        <img src="./scroll-img/guide-black.svg" alt="" class="guide_faq_title" style="width:13%">
+
+        <div class="col guide h-50" style="overflow:hidden">
             <img src="./scroll-img/284653613_151006984133234_986256917135657524_n.jpg" alt="">
             <p>ご利用について</p>
-            <img src="./scroll-img/guide-black.svg" alt="" class="guide_faq_title" style="width:25%">
         </div>
+
+        <img src="./scroll-img/faq-black.svg" alt="" class="guide_faq_title_2" style="width:7.5%">
+        
         <div class="col faq h-50" style="overflow:hidden">
             <img src="./scroll-img/287956854_779169666579939_7984179767766267473_n.jpg" alt="">
             <p>よくある質問</p>
-            <img src="./scroll-img/faq-black.svg" alt="" class="guide_faq_title" style="width:15%">
         </div>
+
     </div>
 
 
     <div class="w-100 booknow" >
         <div class="col-6">
-            <p>下記フォームよりご予約をお願いいたします。 <br>
-                レンタルギアやおすすめプランなどもご選択いただけます。</p>
-            <p>お電話でのご予約は011-205-0767まで</p>
-            <p>お問い合わせください。</p>
+            <!-- <p>下記フォームよりご予約をお願いいたします。 <br> -->
+                <!-- レンタルギアやおすすめプランなどもご選択いただけます。</p> -->
+            <!-- <p>お電話でのご予約は011-205-0767まで</p> -->
+            <!-- <p>お問い合わせください。</p> -->
         </div>
     </div>
 
