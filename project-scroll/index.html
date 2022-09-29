@@ -685,7 +685,6 @@
     
         // 點按哪個方塊就移動照片 + 變色
         $(".slider-dots li").click(function () {
-            console.log(nowPage);
             nowPage = $(this).index() ;
             trainmove();
         });
@@ -693,7 +692,6 @@
         // 往後箭頭
         $('.arrow-right').click(function(){
             nowPage++;
-            console.log(nowPage);
             trainmove();
         })
     
@@ -732,7 +730,6 @@
     
         // 事件監聽器
         $("ul.train").on("transitionend", function(){
-                console.log('transition end',nowPage);
                 if(nowPage>=4){
                     nowPage = 0;
                     trainmoveWithout();
@@ -750,12 +747,9 @@
         // 這邊是偵測 scroll event
 
         $(window).scroll( function(){
-
-            console.log($(window).scrollTop())
             
             if($(window).scrollTop()<350){
                 $('.navbar-white').css('opacity','0')
-                console.log(5);
             }else{
                 $('.navbar-white').css('opacity','1')
             };
